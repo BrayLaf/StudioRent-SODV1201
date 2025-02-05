@@ -1,17 +1,22 @@
-:root{
-    --backround:white;
-    --secClr: #809BAA;
-    --thirClr: #1B3D1C;
-    --fourthClr: #D9D3D3;
-}
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+    --primaryColor1: #809baa;
+    --primaryColor2: #d9d3d3;
+    --primaryColor3: #1b3d1c;
+    --primaryColor4: #e3e7f0;
+    --white: #ffffff;
+    --text-dark: #0f172a;
+    --text-light: #809baa;
+    --max-width: 1200px;
+  }
 
 * {
     margin: 0px;
     padding: 0px;
 }
 body {
-    font-family: Arial, sans-serif;
-    background-color: var(--backround);
+    font-family: "Montserrat", serif;
     display: flex;
     flex-direction: column;
 }
@@ -19,18 +24,18 @@ button{
     border-radius: 5px;
     padding: 10px 15px;
     color: var(--backround);
-    background-color: var(--thirClr);
+    background-color: var(--primaryColor3);
 }
 p{
-    color: var(--secClr);
+    color: var(--text-light);
 }
 nav{
-    background-color: var(--secClr);
     display: flex;
     padding: 30px;
-    width: 100vw;
+    width: 100%;
 }
 nav h1{
+    color: var(--text-dark);
     align-self: center;
     justify-self: center;
 }
@@ -62,12 +67,14 @@ img {
     object-fit: cover;
 }
 .list-info{
+    background-color: var(--primaryColor4);
     justify-content: center;
     align-self: center;
     display: flex;
     flex-direction: column;
     padding: 20px;
-    margin: 30px;
+    margin: 30px 0 0 0;
+    width: 100%;
 }
 .about{
     display: flex;
@@ -80,11 +87,11 @@ h2{
     width: 50vw;
 }
 aside{
-    border: solid var(--secClr);
+    border: solid var(--primaryColor1);
     width: 30vw;
     padding: 10px;
     margin: 10px;
-    background-color: var(--fourthClr);
+    background-color: var(--white);
 }
 @media screen and (max-width: 1024px){
     .listing-imgs{

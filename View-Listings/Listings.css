@@ -26,7 +26,14 @@ p{
 nav{
     background-color: var(--secClr);
     display: flex;
-    padding: 10px;
+    justify-content: center;
+    align-items: center;  
+    padding: 40px;
+}
+button{
+    position: fixed;
+    left: 0;
+    right: 20;
 }
 
 .listing-imgs{

@@ -2,6 +2,7 @@
     --backround:white;
     --secClr: #809BAA;
     --thirClr: #1B3D1C;
+    --fourthClr: #D9D3D3;
 }
 
 * {
@@ -26,14 +27,12 @@ p{
 nav{
     background-color: var(--secClr);
     display: flex;
-    justify-content: center;
-    align-items: center;  
-    padding: 40px;
+    padding: 30px;
+    width: 100vw;
 }
-button{
-    position: fixed;
-    left: 0;
-    right: 20;
+nav h1{
+    align-self: center;
+    justify-self: center;
 }
 
 .listing-imgs{
@@ -81,10 +80,11 @@ h2{
     width: 50vw;
 }
 aside{
-    border: solid;
+    border: solid var(--secClr);
     width: 30vw;
     padding: 10px;
     margin: 10px;
+    background-color: var(--fourthClr);
 }
 @media screen and (max-width: 1024px){
     .listing-imgs{

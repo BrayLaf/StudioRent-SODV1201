@@ -6,9 +6,9 @@
   --primaryColor3: #1b3d1c;
   --primaryColor4: #e3e7f0;
   --white: #ffffff;
-  --text-dark: #0f172a;
-  --text-light: #809baa;
-  --max-width: 1200px;
+  --textDark: #0f172a;
+  --textLight: #809baa;
+  --maxWidth: 1200px;
 }
 
 * {
@@ -17,16 +17,16 @@
   box-sizing: border-box;
 }
 
-.section_container {
-  max-width: var(--max-width);
+.sectionContainer {
+  max-width: var(--maxWidth);
   margin: auto;
   padding: 5rem 1rem;
 }
 
-.section_header {
+.sectionHeader {
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--text-dark);
+  color: var(--textDark);
   text-align: center;
 }
 
@@ -44,10 +44,10 @@
 }
 
 button:hover {
-    background-color: #2d4d2e;
-    color: var(--white);
-    box-shadow: var(--primaryColor3);
-    transition: 0.3s;
+  background-color: #2d4d2e;
+  color: var(--white);
+  box-shadow: var(--primaryColor3);
+  transition: 0.3s;
 }
 
 img {
@@ -79,7 +79,7 @@ header::after {
 }
 
 nav {
-  max-width: var(--max-width);
+  max-width: var(--maxWidth);
   margin: auto;
   padding: 2rem 1rem;
   display: flex;
@@ -87,13 +87,13 @@ nav {
   justify-content: space-between;
 }
 
-.nav_logo a {
+.navLogo a {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--text-dark);
+  color: var(--textDark);
 }
 
-.nav_links {
+.navLinks {
   list-style: none;
   display: flex;
   align-items: center;
@@ -103,43 +103,43 @@ nav {
 .link a {
   padding: 5px 0;
   font-weight: 700;
-  color: var(--text-dark);
+  color: var(--textDark);
   border-bottom: 2px solid transparent;
   transition: 0.3s;
 }
 
-.link a:hover{
+.link a:hover {
   color: var(--primaryColor3);
   border-color: var(--primaryColor3);
 }
 
-.header_container {
+.headerContainer {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   align-items: center;
 }
 
-.header_content h4 {
+.headerContent h4 {
   margin-bottom: 1rem;
   font-size: 1rem;
   font-weight: 700;
   color: var(--primaryColor1);
 }
 
-.header_content h1 {
+.headerContent h1 {
   margin-bottom: 2rem;
   font-size: 3.75rem;
   font-weight: 700;
-  color: var(--text-dark);
+  color: var(--textDark);
 }
 
-.header_content p {
+.headerContent p {
   margin-bottom: 2rem;
-  color: var(--text-light);
+  color: var(--textLight);
 }
 
-.header_content form {
+.headerContent form {
   width: 100%;
   padding: 5px;
   display: flex;
@@ -147,7 +147,7 @@ nav {
   box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.1);
 }
 
-.header_content input {
+.headerContent input {
   width: 100%;
   padding: 0 1rem;
   outline: none;
@@ -155,89 +155,291 @@ nav {
   font-size: 1rem;
 }
 
-.header_image {
+.headerImage {
   position: relative;
   padding-right: 2rem;
 }
 
-.header_image img {
+.headerImage img {
   max-width: 500px;
   margin: auto;
 }
 
 /* DEALS */
 
-.mostviewed_header {
-    display: flex;
+.mostViewedHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.mostViewedHeaderContent .sectionHeader {
+  max-width: 450px;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.mostViewedHeaderContent p {
+  max-width: 500px;
+  color: var(--textLight);
+}
+
+.mostViewedNav {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.mostViewedNav a {
+  padding: 5px 0;
+  font-weight: 700;
+  white-space: nowrap;
+  color: var(--textDark);
+  border-bottom: 2px solid transparent;
+  transition: 0.3s;
+}
+
+.mostViewedNav a:hover,
+.mostViewedNav a.active {
+  color: var(--primaryColor1);
+  border-color: var(--primaryColor1);
+}
+
+.mostViewedGrid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.mostViewedCard {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.mostViewedCard img {
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.mostViewedCard:hover img {
+  scale: 1.1;
+}
+
+.mostViewedCard span {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  color: var(--white);
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--white);
+  border-radius: 5px;
+}
+
+.sectionContainer {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+.mostViewedContainer, .testimonialsContainer {
+  padding: 4rem 1rem;
+}
+
+.header {
+  margin-bottom: 2rem;
+}
+
+.header p {
+  letter-spacing: 2px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.header h1 {
+  font-family: "Montserrat", serif;
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.testimonialsGrid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  padding: 2rem;
+  display: grid;
+  gap: 1rem;
+  background-color: var(--extraLight);
+  border-radius: 5px;
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.card i {
+  font-size: 2.5rem;
+  color: var(--primaryColor3);
+}
+
+.card p {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.card hr {
+  width: 40px;
+  margin: auto;
+  color: var(--textLight);
+}
+
+.card img {
+  width: 60px;
+  height: 60px;
+  margin: auto;
+  border-radius: 100%;
+  border: 1px solid var(--primaryColor3);
+}
+
+.card .name {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--textLight);
+  transition: 0.3s;
+}
+
+.card .name:hover {
+  color: var(--primaryColor3);
+}
+
+.footer {
+  background-color: var(--primaryColor3);
+  color: var(--white);
+  padding: 3rem 1rem;
+  text-align: left;
+}
+
+.footerContainer {
+  max-width: var(--max-width);
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+.footerLogo a {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--white);
+  text-decoration: none;
+  margin-bottom: 1rem;
+}
+
+.footerLinks,
+.footerContact,
+.footerSocials {
+  flex: 1;
+}
+
+.footerLinks h4,
+.footerContact h4,
+.footerSocials h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.footerLinks ul {
+  list-style: none;
+}
+
+.footerLinks li a {
+  font-weight: 500;
+  color: var(--white);
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  display: block;
+  transition: 0.3s;
+}
+
+.footerLinks li a:hover {
+  color: var(--primaryColor1);
+}
+
+.footerContact p {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.footerSocials .socialIcons {
+  display: flex;
+  gap: 1rem;
+}
+
+.footerSocials a {
+  font-size: 1.8rem;
+  color: var(--white);
+  transition: 0.3s;
+}
+
+.footerSocials a:hover {
+  color: var(--primaryColor1);
+}
+
+.footerBottom {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.footerBottom p {
+  font-size: 1rem;
+  color: var(--white);
+  font-weight: 400;
+  margin: 0.5rem 0;
+}
+
+@media (max-width: 900px) {
+  .footerContainer {
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
   }
   
-  .mostviewed_header_content .section_header {
-    max-width: 450px;
-    margin-bottom: 1rem;
-    text-align: left;
+  .footerLogo {
+    text-align: center;
   }
   
-  .mostviewed_header_content p {
-    max-width: 500px;
-    color: var(--text-light);
+  .footerLinks,
+  .footerContact,
+  .footerSocials {
+    text-align: center;
   }
   
-  .mostviewed_nav {
-    margin-top: 2rem;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 2rem;
+  .footerLinks ul {
+    padding: 0;
   }
-  
-  .mostviewed_nav a {
-    padding: 5px 0;
-    font-weight: 700;
-    white-space: nowrap;
-    color: var(--text-dark);
-    border-bottom: 2px solid transparent;
-    transition: 0.3s;
+}
+
+@media (max-width: 900px) {
+  .testimonialsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
-  
-  .mostviewed_nav a:hover,
-  .mostviewed_nav a.active {
-    color: var(--primaryColor1);
-    border-color: var(--primaryColor1);
+}
+
+@media (max-width: 600px) {
+  .testimonialsGrid {
+    grid-template-columns: repeat(1, 1fr);
   }
-  
-  .mostviewed_grid {
-    margin-top: 2rem;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-  }
-  
-  .mostviewed_card {
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-  }
-  
-  .mostviewed_card img {
-    border-radius: 5px;
-    transition: 0.3s;
-  }
-  
-  .mostviewed_card:hover img {
-    scale: 1.1;
-  }
-  
-  .mostviewed_card span {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-    color: var(--white);
-    background-color: rgba(0, 0, 0, 0.5);
-    border: 1px solid var(--white);
-    border-radius: 5px;
-  }
+}

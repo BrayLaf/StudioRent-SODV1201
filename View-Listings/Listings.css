@@ -126,7 +126,7 @@ aside {
     border-radius: 5px;
     box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
   }
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 900px){
     .listing-imgs{
         --col: 2;
         --rowH: 100px;
@@ -140,6 +140,9 @@ aside {
     }
     header{
         display: unset;
+    }
+    .list-info, .about, .owner{
+        width: 80vw;
     }
 }
 
@@ -155,7 +158,6 @@ aside {
   }
   
   .footerContainer {
-    max-width: var(--max-width);
     margin: auto;
     display: flex;
     justify-content: space-between;
@@ -170,7 +172,7 @@ aside {
     text-decoration: none;
     margin-bottom: 1rem;
   }
-  
+
   .footerLinks,
   .footerContact,
   .footerSocials {

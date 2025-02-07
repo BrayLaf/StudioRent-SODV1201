@@ -40,11 +40,12 @@ button:hover {
   }
 .p1, .p2{
     color: var(--text-light);
+    padding: 10px;
 }
 nav {
     display: flex;
     padding: 30px;
-    width: var(--max-width);
+    width: 90vw;
 }
 .listTitle {
     color: var(--text-dark);

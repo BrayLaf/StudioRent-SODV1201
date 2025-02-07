@@ -20,21 +20,35 @@ body {
     display: flex;
     flex-direction: column;
 }
-button{
-    border-radius: 5px;
-    padding: 10px 15px;
-    color: var(--backround);
+.btn {
+    position: absolute;
+    left: 20px;
+    padding: 1rem 1.5rem;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    white-space: nowrap;
+    color: var(--white);
     background-color: var(--primaryColor3);
-}
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 2px 10px 20px var(--primaryColor2);
+  }
+button:hover {
+    background-color: #2d4d2e;
+    color: var(--white);
+    box-shadow: var(--primaryColor3);
+    transition: 0.3s;
+  }
 p{
     color: var(--text-light);
 }
 nav{
     display: flex;
     padding: 30px;
-    width: 100%;
+    width: var(--max-width);
 }
-nav h1{
+h1{
     color: var(--text-dark);
     align-self: center;
     justify-self: center;
@@ -60,6 +74,22 @@ nav h1{
     grid-row: span 2;
 }
 
+header {
+    position: relative;
+    justify-items: center;
+  }
+  
+  header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: calc(50% - 15rem);
+    background-color: var(--primaryColor4);
+    z-index: -1;
+  }
+
 img {
     display: block;
     width: 100%;
@@ -67,38 +97,52 @@ img {
     object-fit: cover;
 }
 .list-info{
-    background-color: var(--primaryColor4);
-    justify-content: center;
-    align-self: center;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
     padding: 20px;
     margin: 30px 0 0 0;
-    width: 100%;
+    width: 100vw;
 }
 .about{
     display: flex;
+    flex-direction: column;
     padding: 10px;
 }
 h2{
+    color: var(--text-dark);
     width: 50vw;
 }
 .p1{
     width: 50vw;
 }
 aside{
-    border: solid var(--primaryColor1);
     width: 30vw;
     padding: 10px;
     margin: 10px;
     background-color: var(--white);
 }
+.card {
+    padding: 2rem;
+    gap: 1rem;
+    background-color: var(--extraLight);
+    border-radius: 5px;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+  }
 @media screen and (max-width: 1024px){
     .listing-imgs{
         --col: 2;
         --rowH: 100px;
     }
-    .about{
+    .btn{
+        top: 5px;
+        left: 5px;
+    }
+    .list-info{
         flex-direction: column;
+    }
+    header{
+        display: unset;
     }
 }

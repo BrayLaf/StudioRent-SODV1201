@@ -323,3 +323,8 @@ aside {
   padding: 20px;
   padding-inline-start: var(--size-6);
 }
+
+.rating{
+  color: var(--text-dark);
+  font-size: larger;
+}

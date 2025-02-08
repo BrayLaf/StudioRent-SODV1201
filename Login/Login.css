@@ -1,22 +1,61 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background: repeating-linear-gradient(
+        90deg,
+        #fff7f7,
+        #fff7f7 50px,
+        white 50px,
+        white 100px
+    );
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin: 0;
 }
 
-.container {
+.login-container {
+    background: white;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    border: 1px solid #ccc;
+    width: 300px;
 }
 
-h1 {
-    color: red;
-    font-size: 36px;
+h2 {
+    margin-bottom: 20px;
+    color: #333;
 }
 
-p {
+label {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    margin-top: 10px;
     color: #666;
-    font-size: 18px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #555;
 }

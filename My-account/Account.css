@@ -11,60 +11,104 @@
   --maxWidth: 1200px;
 }
 
-body {
-    height: 100vh;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    grid-template-rows: 60px 1fr;
-    grid-template-areas: 
-    "side header"
-    "side main";
+}
+
+html {
+    font-family: "Montserrat", serif;
+line-height: 1.5rem
+
+}
+
+body {
+    min-height: 100vh;
+    min-height:100dvh;
+    background-color: var(--primaryColor1);
+    color: #1b3d1c;
+        display: grid;
+        grid-template-columns: auto 1fr;
+}
+
+#sideBar {
+    box-sizing: border-box;
+    height: 100vh;
+    width: 250px;
+    padding: 5px 1em;
+    background-color: var(--textLight);
+    border-right: 1px solid var(--primaryColor3);
+
+    position: sticky;
+    top: 0;
+    align-self: start;
+}
+
+#sideBar ul {
+    list-style: none;
+}
+
+#sideBar > ul > li:first-child {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 16px;
+    .logo {
+        font-weight: 600;
+    }
     
 }
 
-.header {
-    background-color: red;
-grid-area: header;
+#sideBar ul li.active a{
+    color: var(--primaryColor3);
 
-}
-
-.sidebar {
-    background-color: blue;
-    grid-area: side;
-
-}
-
-.main {
-    background-color: green;
-    grid-area: main;
-    padding: 20px;
-
-    display: grid;
-    grid-template-columns: 300px 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-areas: 
-    "c1 c2 c3"
-    "c1 c4 c5"
-    "c1 c6 c7";
-    gap: 20px;
-
-
-}
-
-.card {
-    background-color: aqua;
-    border-radius: 10px;
-}
-
-@media (max-width: 925px) {
-    .main {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(6, 200px);
-        grid-template-areas: initial;
+    svg {
+        fill: var(--primaryColor3);
     }
+}   
 
-    .card {
-        grid-area: initial !important;
-    }
+#sideBar a, #sideBar .logo {
+    border-radius: .5em;
+    padding: .85em;
+    text-decoration: none;
+    color: var(--textLight);
+    display: flex;
+    align-items: center;
+    gap: 1em;
 }
+
+main {
+    padding: min(30px, 7%);
+}
+
+main p {
+    color: var(--primaryColor2);
+    margin-top: 5px;
+    margin-bottom: 15px;
+    
+}
+
+.menuOption {
+    border: 1px solid var(--primaryColor3);
+    border-radius: 1em;
+    margin-bottom: 20px;
+    padding: min(3em, 15%);
+
+    h2, p {margin-top: 1em}
+}
+
+#sideBar svg {
+    flex-shrink: 0;
+    fill: var(--primaryColor3);
+
+}
+
+#sideBar a span {
+    flex-grow: 1;
+}
+
+#sideBar a:hover {
+    background-color: var(--primaryColor1);
+}
+

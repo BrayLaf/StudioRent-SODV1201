@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --primaryColor1: #809baa;
+  --primaryColor2: #d9d3d3;
+  --primaryColor3: #1b3d1c;
+  --primaryColor4: #e3e7f0;
+  --white: #ffffff;
+  --textDark: #0f172a;
+  --textLight: #809baa;
+  --maxWidth: 1200px;
+
+
+  --z: 10;
+  --z-fixed: 100;
+  --header: 3.5rem;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", serif;
+    font-size: 1.5rem;
+    background-color: var(--primaryColor1);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1120px;
+    margin-inline: 1.5rem;
+}
+
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--primaryColor3);
+    box-shadow: 0 2px 16px hsla(220, 32%, 8%, 3);
+    z-index: var(--z);
+}
+
+.nav {
+    height: var(--header);
+}
+
+.navBurger,
+.navLogo,
+.navClose {
+    color: var(--white);
+}
+
+.navData {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+.navLogo {
+display: inline-flex;
+align-items: center;
+column-gap: .25rem;
+font-weight: 500;
+}
+
+.navLogo i {
+    font-weight: initial;
+    font-size: 1.25rem;
+}
+
+.navToggle {
+    position: relative;
+    width: 32px;
+    height: 32px;
+}
+
+.navBurger, .navClose {
+    position: absolute;
+    width: max-content;
+    height: max-content;
+    inset: 0;
+    margin: auto;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transform: opacity .1s, transform .4s;
+}
+
+.navClose {
+    opacity: 0;
+}
+
+.show-Menu {
+    opacity: 1;
+    top: 3.5rem;
+    pointer-events: initial;
+}
+
+
+
+@media screen and (max-width: 1118px) {
+    .navMenu {
+        position: absolute;
+        left: 0;
+        top: 2.5rem;
+        width: 100%;
+        background-color: var(--textDark);
+        height: calc(100vh - 3.5rem);
+      overflow: auto;
+        pointer-events: none;
+        opacity: 0; 
+        transition: top .4s, opacity .3s;
+    }
+    .navMenu::-webkit-scrollbar {
+        width: 0;
+    }
+    .navList {
+        background-color: var(--primaryColor3);
+        padding-top: 1rem;
+    }
+
+    .navLink {
+        color: var(--white);
+        background-color: var(--primaryColor3);
+        font-weight: 400;
+        padding: 1.25rem 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background-color .3s;
+    }
+
+    .navLink:hover {
+        background-color: var(--textDark);
+    }
+}

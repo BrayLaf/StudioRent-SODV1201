@@ -1,11 +1,18 @@
-.meera-inimai-regular {
+/*.meera-inimai-regular {
     font-family: "Meera Inimai", serif;
     font-weight: 400;
     font-style: normal;
-  }
+  }*/
   body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background: repeating-linear-gradient(
+        90deg,
+        #fff7f7,
+        #fff7f7 50px,
+        white 50px,
+        white 100px
+    );
+    font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,8 +23,8 @@
     width: 500px;
     position: relative; left:-0px;
     position: relative; top: -0px;
-    background-color:#809baa;
-    border:1px solid #809baa;
+    background-color:white;
+    border:1px solid black;
     position: relative;
     display:flex;
     justify-content: center;
@@ -44,7 +51,7 @@
     }
 h1 {
     
-    color: red;
+    color: #1b3d1c;
     font-size: 36px;
     position: relative; top:-40px;
     

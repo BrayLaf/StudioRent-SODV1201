@@ -1,3 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --primaryColor1: #809baa;
+  --primaryColor2: #d9d3d3;
+  --primaryColor3: #1b3d1c;
+  --primaryColor4: #e3e7f0;
+  --white: #ffffff;
+  --textDark: #0f172a;
+  --textLight: #809baa;
+  --maxWidth: 1200px;
+}
+
 body {
     font-family: "Montserrat", serif;
     background: linear-gradient(135deg, #e3e7f0, #809baa);

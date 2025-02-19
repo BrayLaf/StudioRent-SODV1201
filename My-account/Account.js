@@ -7,3 +7,4 @@ document.addEventListener('DOMContentLoaded', () => {
         toggleButton.classList.toggle('rotate');
     });
 });
+

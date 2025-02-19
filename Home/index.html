@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
+        <script src="scripts.js"></script>
+
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
       rel="stylesheet"
@@ -13,12 +15,23 @@
   </head>
   <body>
     <header>
-      <nav>
-        <div class="navLogo"><a href="index.html">ArtistSpaces</a></div>
-        <ul class="navLinks">
-          <li class="link"><a href="#">Home</a></li>
-          <li class="link"><a href="#">Sign In</a></li>
-          <li class="link"><a href="#">Sign Up</a></li>
+      <nav class="navbar">
+        <div class="logo">ArtistSpaces</div>
+        <div class="menu-toggle" id="mobile-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li class="dropdown">
+            <a href="#">My Account ▾</a>
+            <ul class="dropdown-menu">
+              <li><a href="account.html">My Profile</a></li>
+              <li><a href="#">Logout</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Contact</a></li>
         </ul>
       </nav>
 
@@ -27,9 +40,10 @@
           <h4>CREATIVE STUDIOS</h4>
           <h1>Craft Your Masterpiece in the Perfect Space</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            Necessitatibus quis obcaecati neque, itaque provident repellendus
-            quo eveniet pariatur magni id dolorem?
+            Looking for the perfect creative space? Explore studios for artists,
+            photographers, musicians, and designers—whether you need a
+            photography studio, recording space, or art loft, find the ideal
+            spot to bring your ideas to life!
           </p>
           <form>
             <input
@@ -50,8 +64,8 @@
         <div class="mostViewedHeaderContent">
           <h2 class="sectionHeader">Browse Studios</h2>
           <p>
-            Discover the most viewed creative studio rentals! Find the best deals
-            with expert insights, market trends, and top-rated spaces.
+            Discover the most viewed creative studio rentals! Find the best
+            deals with expert insights, market trends, and top-rated spaces.
           </p>
         </div>
         <button class="btn">View All Studios</button>
@@ -99,7 +113,8 @@
         <div class="card">
           <span><i class="ri-double-quotes-l"></i></span>
           <p>
-            "Bachir Studios provided the perfect space for our photoshoot. The environment was inspiring, and the facilities were top-notch."
+            "Bachir Studios provided the perfect space for our photoshoot. The
+            environment was inspiring, and the facilities were top-notch."
           </p>
           <hr />
           <img src="/Home/assets/studio 2/exterior2.1.jpg" alt="user" />
@@ -108,7 +123,9 @@
         <div class="card">
           <span><i class="ri-double-quotes-l"></i></span>
           <p>
-            "I rented a creative studio for a weekend event, and it was everything I needed and more. The studio was spacious, well-lit, and equipped with everything we required."
+            "I rented a creative studio for a weekend event, and it was
+            everything I needed and more. The studio was spacious, well-lit, and
+            equipped with everything we required."
           </p>
           <hr />
           <img src="/Home/assets/studio 2/exterior2.1.jpg" alt="user" />
@@ -117,7 +134,9 @@
         <div class="card">
           <span><i class="ri-double-quotes-l"></i></span>
           <p>
-            "We’ve hosted multiple workshops at Sentry Oak Studios, and every time, the space is perfect for our creative needs. Highly recommend for any artist or event."
+            "We’ve hosted multiple workshops at Sentry Oak Studios, and every
+            time, the space is perfect for our creative needs. Highly recommend
+            for any artist or event."
           </p>
           <hr />
           <img src="/Home/assets/studio 2/exterior2.1.jpg" alt="user" />
@@ -127,11 +146,11 @@
     </div>
 
     <footer class="footer">
-      <div class="footerContainer">
-        <div class="footerLogo">
+      <div class="footer-container">
+        <div class="footer-section footer-logo">
           <a href="#">ArtistSpaces</a>
         </div>
-        <div class="footerLinks">
+        <div class="footer-section">
           <h4>Quick Links</h4>
           <ul>
             <li><a href="#">Home</a></li>
@@ -140,15 +159,15 @@
             <li><a href="#">Contact Us</a></li>
           </ul>
         </div>
-        <div class="footerContact">
+        <div class="footer-section">
           <h4>Contact Us</h4>
           <p>Email: info@artistspaces.com</p>
           <p>Phone: +1 800 123 4547</p>
           <p>Address: 123 Creative Blvd, Art City</p>
         </div>
-        <div class="footerSocials">
+        <div class="footer-section footer-socials">
           <h4>Follow Us</h4>
-          <div class="socialIcons">
+          <div class="social-icons">
             <a href="#"><i class="ri-facebook-circle-line"></i></a>
             <a href="#"><i class="ri-twitter-line"></i></a>
             <a href="#"><i class="ri-instagram-line"></i></a>
@@ -156,14 +175,11 @@
           </div>
         </div>
       </div>
-      <div class="footerBottom">
+      <div class="footer-bottom">
         <p>&copy; 2025 ArtistSpaces. All Rights Reserved.</p>
         <p>Designed with passion by the ArtistSpaces Team.</p>
       </div>
     </footer>
     
-    
-
-    <script src="scripts.js"></script>
   </body>
 </html>

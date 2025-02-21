@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Listing</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f8f8f8;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .listing {
+            display: flex;
+            align-items: center;
+            background: #fff;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd;
+        }
+
+        .listing img {
+            width: 120px;
+            height: 90px;
+            border-radius: 8px;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+
+        .details {
+            flex: 1;
+        }
+
+        .details h3 {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .details p {
+            font-size: 14px;
+            color: #777;
+            margin: 3px 0;
+        }
+
+        .status {
+            margin-right: 15px;
+            font-size: 14px;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: white;
+        }
+
+        .status.available {
+            background: #28a745;
+        }
+
+        .status.sold {
+            background: #dc3545;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown .select {
+            background: #f1f1f1;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .dropdown .menu {
+            list-style: none;
+            position: absolute;
+            right: 0;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            display: none;
+            z-index: 10;
+            width: 120px;
+        }
+
+        .dropdown .menu li {
+            padding: 10px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .dropdown .menu li:hover {
+            background: #f0f0f0;
+        }
+
+        .dropdown:hover .menu {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="listing">
+            <img src="https://via.placeholder.com/120x90" alt="Property Image">
+            <div class="details">
+                <h3>Luxury Apartment</h3>
+                <p>📍 Makati, Philippines</p>
+                <p>💰 $500,000</p>
+            </div>
+            <span class="status available">Available</span>
+            <div class="dropdown">
+                <div class="select">
+                    Actions ▼
+                </div>
+                <ul class="menu">
+                    <li>Edit</li>
+                    <li>View</li>
+                    <li>Delete</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="listing">
+            <img src="https://via.placeholder.com/120x90" alt="Property Image">
+            <div class="details">
+                <h3>Cozy Condo</h3>
+                <p>📍 Quezon City, Philippines</p>
+                <p>💰 $350,000</p>
+            </div>
+            <span class="status sold">Sold</span>
+            <div class="dropdown">
+                <div class="select">
+                    Actions ▼
+                </div>
+                <ul class="menu">
+                    <li>Edit</li>
+                    <li>View</li>
+                    <li>Delete</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

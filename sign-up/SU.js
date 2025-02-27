@@ -1,38 +1,20 @@
+
 document.getElementById("Press").addEventListener("click",function(event)
 {
-    event.preventDefault();
+let form = document.getElementById("signup-form");
 
-    let email = document.getElementById("Email").value.trim();
-    let pass = document.getElementById("pass").value.trim();
-    let uname = document.getElementById("uname").value.trim();
-    let phoN = document.getElementById("phoN").value.trim();
-    let errors="";
-    
-    
-
-
-
-    if (uname === ""){
-        errors+="Username not inputted.\n"; 
-    } 
-    if (email === ""){
-        errors+="Email not inputted.\n"; 
-    }
-    if (pass === ""){
-        errors+="Password not inputted.\n"; 
-    }
-    if (phoN === ""){
-        errors+="Phone number not inputted.\n"; 
-    }
-    if (errors !== ""){
-        alert(errors);
+    if (!form.checkValidity()) {
+        form.reportValidity(); 
         return;
     }
-    alert("Regierster complete");
+   else{
+        let email = encodeURIComponent(document.getElementById("email").value);
+        let uname = encodeURIComponent(document.getElementById("uname").value);
+        let phoN = encodeURIComponent(document.getElementById("phoN").value);
+        window.location.href = `Welcome.html?uname=${uname}&email=${email}&phoN=${phoN}`;
 
-    window.location.href="Welcome.html";
-    localStorage.setItem("uname",uname);
-    localStorage.setItem("email",email);
-    localStorage.setItem("phoN",phoN);
-}
-);
+   }
+   
+
+    
+});

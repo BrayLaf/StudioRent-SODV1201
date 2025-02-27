@@ -18,6 +18,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin:0;
 }
 .signup-container {
   background: #d9d3d3;
@@ -28,10 +29,7 @@
   width: 640px;
 }
 
-  .container {
-    position: absolute;
-    text-align: center;
-}
+
     .sqaure{
         width:300px;
         height:30px;
@@ -47,12 +45,33 @@
 h1 {
     
     color: #1b3d1c;
-    font-size: 20px;
+    font-size: 36px;
     font-weight:bold;
     position: relative; top:-40px;
     
 }
+label {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #1b3d1c;
+}
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #809baa;
+    border-radius: 6px;
+    background: #e3e7f0;
+    color: #333;
+    font-size: 14px;
+}
 
+input:focus {
+    border-color: #1b3d1c;
+    outline: none;
+}
 
 p {
     color: #666;
@@ -60,3 +79,18 @@ p {
 }
 
 
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #1b3d1c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 6px;
+    transition: background 0.3s;
+}
+button:hover {
+    background-color: #809baa;
+}

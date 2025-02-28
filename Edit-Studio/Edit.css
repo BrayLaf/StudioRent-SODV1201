@@ -1,22 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+:root {
+    --primaryColor1: #809baa;
+    --primaryColor2: #d9d3d3;
+    --primaryColor3: #1b3d1c;
+    --primaryColor4: #e3e7f0;
+    --white: #ffffff;
+    --text-dark: #0f172a;
+    --text-light: #809baa;
+    --max-width: 1200px;
+}
+* {
+    margin: 0px;
+    padding: 0px;
+}
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    font-family: "Montserrat", serif;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+}
+.btn {
+    position: absolute;
+    left: 20px;
+    padding: 1rem 1.5rem;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    white-space: nowrap;
+    color: var(--white);
+    background-color: var(--primaryColor3);
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 2px 10px 20px var(--primaryColor2);
+  }
+  .btnDiv{
+    display: flex;
+    padding: 10px;
+  }
+  .editbtn, .editbtn2{
+    width: 15vw;
+    padding: 1rem 1.5rem;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    white-space: nowrap;
+    color: var(--white);
+    background-color: var(--primaryColor3);
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 2px 10px 20px var(--primaryColor2);
+    margin: 5px 30px 0 0;
+  }
+  .editbtn2{
+    width: 7.5vw;
+  }
+  .desc{
+    display: flex;
+    flex-wrap: wrap;
+    width: var(--max-width);
+    height: auto;
+    padding: 5px;
+    margin: 30px;
+  }
+button:hover {
+    background-color: #2d4d2e;
+    color: var(--white);
+    box-shadow: var(--primaryColor3);
+    transition: 0.3s;
+  }
+
+nav {
+    display: flex;
+    padding: 30px;
+    width: 90vw;
+}
+
+header {
+    position: relative;
+    justify-items: center;
+  }
+  
+  header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 50%;
+    width: calc(50% - 15rem);
+    background-color: var(--primaryColor4);
+    z-index: -1;
+  }
+  .mainContainer{
+    display: flex;
+    width: 100vw;
     height: 100vh;
+    justify-content: center;
+  }
+  .sidebar{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    width: 40vw;
+    padding: 2rem;
+    gap: 1rem;
+    background-color: var(--extraLight);
+    border-radius: 5px;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+  }
+  .editing{
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+  }
+@media screen and (max-width: 900px){
+    .btn{
+        top: 5px;
+        left: 5px;
+    }
+    header{
+        display: unset;
+    }
+    
 }
 
-.container {
+
+/* footer */
+
+.footer {
+    background-color: var(--primaryColor3);
+    color: var(--white);
+    padding: 3rem 1rem;
+    text-align: left;
+  }
+  
+  .footerContainer {
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 3rem;
+  }
+  
+  .footerLogo a {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--white);
+    text-decoration: none;
+    margin-bottom: 1rem;
+  }
+
+  .footerLinks,
+  .footerContact,
+  .footerSocials {
+    flex: 1;
+  }
+  
+  .footerLinks h4,
+  .footerContact h4,
+  .footerSocials h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  .footerLinks ul {
+    list-style: none;
+  }
+  
+  .footerLinks li a {
+    font-weight: 500;
+    color: var(--white);
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .footerLinks li a:hover {
+    color: var(--primaryColor1);
+  }
+  
+  .footerContact p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .footerSocials .socialIcons {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .footerSocials a {
+    text-decoration: none;
+    font-size: 1.8rem;
+    color: var(--white);
+    transition: 0.3s;
+  }
+  
+  .footerSocials a:hover {
+    color: var(--primaryColor1);
+  }
+  
+  .footerBottom {
     text-align: center;
-}
-
-h1 {
-    color: red;
-    font-size: 36px;
-}
-
-p {
-    color: #666;
-    font-size: 18px;
-}
+    margin-top: 2rem;
+  }
+  
+  .footerBottom p {
+    font-size: 1rem;
+    color: var(--white);
+    font-weight: 400;
+    margin: 0.5rem 0;
+  }
+  
+  @media (max-width: 900px) {
+    .footerContainer {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .footerLogo {
+      text-align: center;
+    }
+    
+    .footerLinks,
+    .footerContact,
+    .footerSocials {
+      text-align: center;
+    }
+    
+    .footerLinks ul {
+      padding: 0;
+    }
+  }

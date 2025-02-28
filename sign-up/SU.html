@@ -3,36 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="SU.css">
-  <script src="SU.js"></script>
+  <link rel="stylesheet" href="sign_up.css">
+  <script defer src="SU.js"></script>
   <title>Sign In Page</title>
   
 </head>
 <body>
 
-  <div class="circle">
+  <div class="signup-container">
     
-      <div class="container">
+      
         <h1>Register Here</h1>
-        <p>Sign Up Today</p>
-        <div class="sqaure">
-        <label for="uname"> Name</label>  
-        <input type="text" id="uname" name="uname">
-        </div>
-        <div class="sqaure">
-          <label for="Email"> Email</label>  
-          <input type="email" id="Email" name="Email">
-        </div>
-        <div class="sqaure">
-          <label for="phoN"> Phone Number</label>  
-          <input type="text" id="phoN" name="phoN"> 
-          </div>
-          <div class="sqaure">
-            <label for="pass"> Password</label>  
-            <input type="password" id="pass" name="pass"> 
-          </div>
-        <button id="Press">Register!</button>
-    </div>
+        <h2>Sign Up Today</h2>
+        <form id="signup-form">
+          
+            <label for="uname"> Name</label>  
+            <input type="text" id="uname" name="uname">
+            
+            
+            <label for="email">EMAIL:</label>
+            <input type="email" id="email" name="email" required>
+      
+            
+           
+              <label for="phoN"> Phone Number</label>  
+              <input type="text" id="phoN" name="phoN"> 
+              <button  id="Press" type="button">Register!</button>
+        </form>
+        
+        <p>Already Have an Account? <a href="Log_in.html">Log in</a></p>
+    
   </div>
 </body>
 </html>

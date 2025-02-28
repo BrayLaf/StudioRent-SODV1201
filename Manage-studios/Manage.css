@@ -30,8 +30,6 @@ body {
   grid-template-columns: auto 1fr;
 }
 
-
-
 #sideBar {
   box-sizing: border-box;
   height: 100vh;
@@ -143,6 +141,7 @@ body {
 
 main {
   padding: min(30px, 7%);
+
 }
 
 main p {
@@ -152,11 +151,13 @@ main p {
 }
 
 .menuOption {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    justify-content:start;
-    align-items:flex-start;
+    height: 30vh;
+    display: grid;
+    grid-template-rows: 100px 100px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+    'title block block'
+    'filter1 filter2 filter3';    
 
   border: 1px solid var(--textDark);
   border-radius: 1em;
@@ -167,6 +168,22 @@ main p {
   p {
     margin-top: 1em;
   }
+}  
+
+.title {
+  grid-area: title;
+}
+
+.item1 {
+  grid-area: filter1;
+}
+
+.item2 {
+  grid-area: filter2;
+}
+
+.item3 {
+  grid-area: filter3;
 }
 
 .menuOption .title {
@@ -176,70 +193,87 @@ main p {
     padding-bottom: 6px;
 }
 
-.menuOption form .userDetails {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 20px 0 12px 0;
-
+.dropdown {
+  min-width: 15em;
+  position: relative;
+  margin: 1em;
 }
 
-form .userDetails .inputInbox {
-    margin-bottom: 15px;
-    width: calc(100% / 2 - 20px);
+.dropdown * {
+  box-sizing: border-box;
 }
 
-.userDetails .inputInbox .details {
-    display: block;
-    font-weight: 500;
-    margin-bottom: 5px;
-}
-.userDetails .inputInbox input {
-height: 50px;
-width: 100%;
-
-outline: none;
-border-radius: 5px;
-border: 1px solid var(--textDark);
-padding-left: 15px;
-font-size: 16px;
-border-bottom-width: 2px;
-transition: all 0.3s ease;
+.select {
+  background: var(--white);
+  color: var(--primaryColor3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px var(--textDark) solid;
+  border-radius: 0.5em;
+  padding: 1em;
+  cursor: pointer;
+  transition: background 0.3s;
+  
 }
 
-.userDetails .inputInbox input:focus,
-.userDetails .inputInbox input:valid {
-    border-color: var(--primaryColor3);
+.select-clicked {
+  border: 2px var(--primaryColor2) solid;
+  box-shadow: 0 0 0.8em var(--primaryColor2);
 }
 
-.form button {
-    height: 45px;
-    margin: 45px 0;
+.select:hover {
+  background: var(--primaryColor1);
 }
 
-form .button input {
-    height: 100%;
-    width: 20%;
-    padding: 10px;
-    outline: none;
-    color: var(--white);
-    border: none;
-    font-size: 18px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    border-radius: 1px;
-    background: var(--primaryColor3);
-    cursor: pointer;
-    transition:0.3s ease-in-out;
-}
-
-form .button input:hover {
-  background-color: var(--primaryColor3);
-  color: var(--white);
-  box-shadow: 8px 1px 1px var(--primaryColor3);
+.caret {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid var(--primaryColor3);
   transition: 0.3s;
 }
 
+.menu {
+  list-style: none;
+  padding: 0.2em 0.5em;
+  background: var(--primaryColor2);
+  border: 1px var(--primaryColor3) solid;
+  box-shadow: 0 0.5em 1em var(--primaryColor2);
+  border-radius: 0.5em;
+  color: var(--textDark);
+  position: absolute;
+  top: 4em;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+  opacity: 0;
+  display: none;
+  transition: 0.2s;
+  z-index: 1;
+  display: none;
+}
+
+.menu li {
+    padding: 0.7em 0.5em;
+    margin: 0.3em 0;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+
+.menu li:hover {
+  background: var(--white);
+}
+
+.active {
+  background: var(--textDark);
+}
+
+.menu-open {
+  display: block;
+  opacity: 1;
+}
 
 @media (max-width: 584px) {
     .menuOption {
@@ -270,28 +304,6 @@ form .button input:hover {
         width: 100%;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @media (max-width: 800px) {
   body {
@@ -342,3 +354,146 @@ form .button input:hover {
     }
   }
 }
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  height: 70vh;
+
+  border: 1px solid var(--textDark);
+  border-radius: 1em;
+  margin-bottom: 20px;
+  padding: min(3em, 15%);
+
+
+}
+
+.listing1, .listing2 {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+}
+
+.listing img {
+  width: 120px;
+  height: 90px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.listing1 img, .listing2 img {
+  width: 150px; 
+  height: 150px;
+  border-radius: 8px;
+  margin-right: 1em;
+}
+
+.details {
+  flex: 1;
+}
+
+.details i {
+  color: var(--primaryColor3);
+}
+
+.details h3 {
+  font-size: 18px;
+  color: #333;
+}
+
+.details p {
+  font-size: 14px;
+  color: #777;
+  margin: 3px 0;
+}
+
+.status {
+  margin-right: 15px;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: white;
+}
+
+.status.available {
+  background: #28a745;
+}
+
+.status.unavailable {
+  background: #dc3545;
+}
+
+.dropdown2 {
+  position: relative;
+}
+
+.dropdown2 .select2 {
+  background: #f1f1f1;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.dropdown2 .menu2 {
+  list-style: none;
+  position: absolute;
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: none;
+  z-index: 10;
+  width: 120px;
+}
+
+.dropdown2 .menu2 li {
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.dropdown2 .menu2 li:hover {
+  background: #f0f0f0;
+}
+
+.dropdown2:hover .menu2 {
+  display: block;
+}
+
+@media (max-width: 1200px) {
+
+  body {
+    height: 100vh ;
+  }
+  .dropdown-menu {
+    width: auto; 
+    min-width: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-height: 250px; 
+    overflow-y: auto;
+  }
+
+  .listing-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; 
+    padding: 10px;
+  }
+
+  .menuOption {
+    font-size: 14px;
+    padding: 8px 12px; 
+  }
+}
+

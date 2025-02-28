@@ -11,7 +11,7 @@ body {
     max-width: 1200px;
     margin: 20px auto;
     padding: 20px;
-    gap: 20px; /* Add spacing between sidebar and main content */
+    gap: 20px;
 }
 
 .sidebar {
@@ -77,7 +77,7 @@ button:hover {
     background-color: #809baa;
 }
 
-/* Studio Cards Layout */
+
 .studio-list {
     width: 75%;
     display: flex;
@@ -86,7 +86,7 @@ button:hover {
 }
 
 .studio-card {
-    width: calc(50% - 10px); /* Two columns layout */
+    width: calc(50% - 10px); 
     background: #ffffff;
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -147,7 +147,7 @@ button:hover {
     }
 
     .studio-card {
-        width: 100%; /* Full width on smaller screens */
+        width: 100%; 
     }
 
     .sidebar .price-range {

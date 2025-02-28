@@ -12,10 +12,26 @@
 
 <body>
   <header>
-    <nav>
-      <button class="btn">Return</button>
+    <nav class="navbar">
+      <div class="logo">ArtistSpaces</div>
+      <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="\Home\index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#">My Account ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="account.html">My Profile</a></li>
+            <li><a href="#">Logout</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Contact</a></li>
+      </ul>
     </nav>
-    <h1>Edit Studio</h1>
+    <h1 class="pageTitle">Edit Studio</h1>
     <div class="mainContainer">
       <div class="sidebar">
         <p>Key Information &#9989;</p>

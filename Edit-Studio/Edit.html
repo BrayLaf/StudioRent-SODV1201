@@ -24,24 +24,24 @@
         <li class="dropdown">
           <a href="#">My Account ▾</a>
           <ul class="dropdown-menu">
-            <li><a href="account.html">My Profile</a></li>
+            <li><a href="\My-account\Account.html">My Profile</a></li>
             <li><a href="#">Logout</a></li>
           </ul>
         </li>
         <li><a href="#">Contact</a></li>
       </ul>
     </nav>
-    <h1 class="pageTitle">Edit Studio</h1>
+    <h1 class="pageTitle" id="keyinfo">Edit Studio</h1>
     <div class="mainContainer">
       <div class="sidebar">
-        <p>Key Information &#9989;</p>
-        <p>Photos & Media &#9989;</p>
-        <p>Location & Details &#9989;</p>
-        <p>Contact &#9989;</p>
+        <p><a href="#keyinfo">Key Information &#9989;</a></p>
+        <p><a>Photos & Media &#9989;</a></p>
+        <p><a>Location & Details &#9989;</a></p>
+        <p><a>Contact &#9989;</a></p>
       </div>
       <div class="editing">
-        <h1>Rental Type</h1>
-        <div class="btnDiv">
+        <h1 >Rental Type</h1>
+        <div class="btnDiv" >
           <button class="editbtn">Multi Day</button>
           <button class="editbtn">Single Day</button>
         </div>
@@ -65,15 +65,36 @@
           <button class="editbtn">No</button>
         </div>
         <h2>Title</h2>
-        <input class="desc" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque id luctus urna. Donec nec enim porttitor, malesuada ligula id, volutpat diam.">
+        <input class="desc" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
+        <h2>Images</h2>
+        <input class="desc" type="file">
+        <h2>Location & details</h2>
+        <input class="desc" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
+        <h2>Description</h2>
+        <textarea class="desc" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit."></textarea>
+        <div id="form-container">
+          <h2>Property Owner Contact Form</h2>
+          <form id="property-form" action="#" method="POST">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required>
+              
+              <label for="phone">Phone Number:</label>
+              <input type="tel" id="phone" name="phone" required>
+              
+              <label for="address">Property Address:</label>
+              <textarea id="address" name="address" rows="3" required></textarea>
+  
+              <button type="submit">Submit</button>
+          </form>
+      </div>
     </div>
   </header>
   <footer class="footer">
-    <div class="footerContainer">
-      <div class="footerLogo">
+    <div class="footer-container">
+      <div class="footer-section footer-logo">
         <a href="#">ArtistSpaces</a>
       </div>
-      <div class="footerLinks">
+      <div class="footer-section">
         <h4>Quick Links</h4>
         <ul>
           <li><a href="#">Home</a></li>
@@ -82,15 +103,15 @@
           <li><a href="#">Contact Us</a></li>
         </ul>
       </div>
-      <div class="footerContact">
+      <div class="footer-section">
         <h4>Contact Us</h4>
         <p>Email: info@artistspaces.com</p>
         <p>Phone: +1 800 123 4547</p>
         <p>Address: 123 Creative Blvd, Art City</p>
       </div>
-      <div class="footerSocials">
+      <div class="footer-section footer-socials">
         <h4>Follow Us</h4>
-        <div class="socialIcons">
+        <div class="social-icons">
           <a href="#"><i class="ri-facebook-circle-line"></i></a>
           <a href="#"><i class="ri-twitter-line"></i></a>
           <a href="#"><i class="ri-instagram-line"></i></a>
@@ -98,7 +119,7 @@
         </div>
       </div>
     </div>
-    <div class="footerBottom">
+    <div class="footer-bottom">
       <p>&copy; 2025 ArtistSpaces. All Rights Reserved.</p>
       <p>Designed with passion by the ArtistSpaces Team.</p>
     </div>

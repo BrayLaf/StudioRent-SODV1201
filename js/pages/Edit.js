@@ -67,4 +67,14 @@ $(function () {
     });
 });
 
+document.addEventListener("scroll", function () {
+    const contactSection = document.querySelector(".contactDetails");
+    const footer = document.querySelector(".footer");
+
+    const contactBottom = contactSection.getBoundingClientRect().bottom + window.scrollY;
+
+    footer.style.position = "relative"; 
+    footer.style.top = contactBottom + "px"; 
+});
+
 

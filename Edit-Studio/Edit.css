@@ -44,7 +44,19 @@ body {
     flex-wrap: wrap;
     width: 30vw;
     height: auto;
-    padding: 5px;
+    padding: 20px;
+    margin: 10px;
+  }
+  .imageUpload{
+    padding: 20px;
+  }
+  label{
+    padding: 20px;
+    color: var(--text-dark);
+  }
+  h2, h3{
+    padding: 10px;
+    color: var(--text-dark);
   }
 button:hover {
     background-color: #2d4d2e;
@@ -206,29 +218,39 @@ header {
     align-items: center;
     margin: 20px;
     width: 40vw;
+    height: 100vh;
     padding: 2rem;
     gap: 1rem;
     background-color: var(--extraLight);
     border-radius: 5px;
     box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    left: 0;
   }
+  
   .sidebar p{
     padding: 20px;
     font-size: 2vw;
+    color: var(--text-dark);
   }
   .sidebar a{
     color: var(--text-dark);
     list-style: none;
     text-decoration: none;
   }
+  .sidebar p:hover, .sidebar a:hover{
+    background-color: var(--primaryColor3);
+    color: var(--white);
+  }
   .editing{
     display: flex;
     flex-direction: column;
-    width: 70vw;
+    width: 50vw;
+    padding-top: 20px;
+    margin-left: auto;
+    margin-right: 0;
   }
 
-  
-  
 @media screen and (max-width: 900px){
     .btn{
         top: 5px;

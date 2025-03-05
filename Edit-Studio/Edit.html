@@ -34,13 +34,13 @@
     <h1 class="pageTitle" id="keyinfo">Edit Studio</h1>
     <div class="mainContainer">
       <div class="sidebar">
-        <p><a href="#keyinfo">Key Information &#9989;</a></p>
-        <p><a>Photos & Media &#9989;</a></p>
-        <p><a>Location & Details &#9989;</a></p>
-        <p><a>Contact &#9989;</a></p>
+        <p><a href="#keyinfo">Key Information</a></p>
+        <p><a href="#postImages">Photos & Media</a></p>
+        <p><a href="#locadetails">Location & Details</a></p>
+        <p><a href="#property-form">Contact</a></p>
       </div>
       <div class="editing">
-        <h1 >Rental Type</h1>
+        <h1>Rental Type</h1>
         <div class="btnDiv" >
           <button class="editbtn">Multi Day</button>
           <button class="editbtn">Single Day</button>
@@ -66,9 +66,20 @@
         </div>
         <h2>Title</h2>
         <input class="desc" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
-        <h2>Images</h2>
-        <input class="desc" type="file">
-        <h2>Location & details</h2>
+        <div>
+          <h2 id="postImages">Images</h2>
+          <h3>Main photo</h3>
+          <input class="desc" type="file">
+          <h3>Secondary photo</h3>
+          <input class="desc" type="file">
+          <h3>Third Photo</h3>
+          <input class="desc" type="file">
+          <h3>Fourth Photo</h3>
+          <input class="desc" type="file">
+          <h3>Fifth Photo</h3>
+          <input class="desc" type="file">
+        </div>
+        <h2 id="locadetails">Location & details</h2>
         <input class="desc" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
         <h2>Description</h2>
         <textarea class="desc" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit."></textarea>

@@ -65,16 +65,17 @@ $(function () {
     }, {
         passive: true
     });
-});
-
-document.addEventListener("scroll", function () {
-    const contactSection = document.querySelector(".contactDetails");
-    const footer = document.querySelector(".footer");
-
-    const contactBottom = contactSection.getBoundingClientRect().bottom + window.scrollY;
-
-    footer.style.position = "relative"; 
-    footer.style.top = contactBottom + "px"; 
+    
+    // keep footer on bottom
+    document.addEventListener("scroll", function () {
+        const contactSection = document.querySelector(".contactDetails");
+        const footer = document.querySelector(".footer");
+    
+        const contactBottom = contactSection.getBoundingClientRect().bottom + window.scrollY;
+    
+        footer.style.position = "relative"; 
+        footer.style.top = contactBottom + "px"; 
+    });
 });
 
 

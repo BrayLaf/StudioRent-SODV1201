@@ -73,7 +73,7 @@ $(function () {
     
         const contactBottom = contactSection.getBoundingClientRect().bottom + window.scrollY;
     
-        footer.style.position = "relative"; 
+        footer.style.position = "fixed"; 
         footer.style.top = contactBottom + "px"; 
     });
 });

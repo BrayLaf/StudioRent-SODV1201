@@ -187,7 +187,7 @@ z-index: 101;
   outline: none;
 }
 
-.login-container button {
+.login-container #logSubmit {
   width: 100%;
   padding: 12px;
   margin-top: 50px;
@@ -206,7 +206,7 @@ text-align: center;
 margin-top: 15px;
 }
 
-.login-container button:hover {
+.login-container #logSubmit:hover {
   background-color: #2d4d2e;
   color: var(--white);
   box-shadow: var(--primaryColor3);

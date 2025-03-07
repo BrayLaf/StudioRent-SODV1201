@@ -57,5 +57,17 @@ $(function () {
         $(".signup-container").hide()
     });
     // login user when form is submitted
-    
+    $('#login-form').submit((e) => {
+        e.preventDefault()
+        const data = Object.fromEntries(new FormData(e.target).entries());
+        console.log(data)
+        UserArray.forEach(element => {
+            if(element.email == data.email){
+                $(".login-container").hide();
+                console.log("user logged in");
+            }else{
+                console.log("No such user exists");
+            }
+        });
+    });
 });

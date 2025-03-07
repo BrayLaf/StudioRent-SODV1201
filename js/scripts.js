@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+$(function () {
     const mobileMenu = document.getElementById("mobile-menu");
     const navLinks = document.querySelector(".nav-links");
     const dropdown = document.querySelector(".dropdown");
@@ -19,6 +19,21 @@ document.addEventListener("DOMContentLoaded", function () {
     document.addEventListener("click", function (event) {
         if (!dropdown.contains(event.target)) {
             dropdown.classList.remove("open");
+        }
+    });
+
+    //popup login when prompted
+    $(".loginButton").click(function(){
+        $(".login-container").show();
+    });
+    //popup sign/login in when prompted 
+    $(".signup").click(function(){
+        if($(".login-container").is(":visible")){
+            $(".signup-container").show();
+            $(".login-container").hide();
+        }else{
+            $(".login-container").show();
+            $(".signup-container").hide()
         }
     });
 });

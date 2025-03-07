@@ -141,6 +141,7 @@ nav {
 /* Login CSS */
 
 .login-container {
+  display: none;
   position: absolute;
 top: 50%;
 left: 50%;
@@ -213,11 +214,17 @@ margin-top: 15px;
   scale: 1.1;
   transition: scale 0.4s ease-in-out;
 }
+.login-container a:hover{
+  cursor: pointer;
+  color: var(--primaryColor3);
+
+}
 
 /* Signup */
 
 .signup-container {
-  position: absolute;
+display: none;
+position: absolute;
 top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
@@ -290,7 +297,10 @@ margin-top: 15px;
   transition: scale 0.4s ease-in-out;
 }
 
-
+.signup-container a:hover{
+  cursor: pointer;
+  color: var(--primaryColor3);
+}
 
 
 .bar {

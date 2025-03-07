@@ -36,4 +36,26 @@ $(function () {
             $(".signup-container").hide()
         }
     });
+    //user object constructor 
+    function User(name, email, number, studios){
+        this.name = name;
+        this.email = email;
+        this.number = number; 
+        this.Studios = studios;
+    }
+    //array of users
+    let UserArray = [];
+    // create new user when form is submitted
+    $('#signup-form').submit((e) => {
+        e.preventDefault()
+        let studios = [];
+        const data = Object.fromEntries(new FormData(e.target).entries());
+        console.log(data)
+        const newuser = new User(data.uname, data.email, data.phoN, studios);
+        console.log(newuser);
+        UserArray.push(newuser);
+        $(".signup-container").hide()
+    });
+    // login user when form is submitted
+    
 });

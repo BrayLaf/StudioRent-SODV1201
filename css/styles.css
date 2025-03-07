@@ -269,7 +269,7 @@ z-index: 101;
   outline: none;
 }
 
-.signup-container button {
+.signup-container #Press {
   width: 100%;
   padding: 12px;
   margin-top: 50px;
@@ -288,7 +288,7 @@ text-align: center;
 margin-top: 15px;
 }
 
-.signup-container button:hover {
+.signup-container #Press:hover {
   background-color: #2d4d2e;
   color: var(--white);
   box-shadow: var(--primaryColor3);

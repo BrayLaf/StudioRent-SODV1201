@@ -466,7 +466,7 @@ header::after {
   color: var(--textLight);
 }
 
-.mostViewedNav {
+.studio-filter {
   margin-top: 2rem;
   display: flex;
   align-items: center;
@@ -474,7 +474,7 @@ header::after {
   gap: 2rem;
 }
 
-.mostViewedNav a {
+.studio-filter a {
   padding: 5px 0;
   font-weight: 700;
   white-space: nowrap;
@@ -483,8 +483,8 @@ header::after {
   transition: 0.3s;
 }
 
-.mostViewedNav a:hover,
-.mostViewedNav a.active {
+.studio-filter a:hover,
+.studio-filter a.active {
   color: var(--primaryColor1);
   border-color: var(--primaryColor1);
 }
@@ -505,6 +505,9 @@ header::after {
 .mostViewedCard img {
   border-radius: 5px;
   transition: 0.3s;
+  width: 400px; 
+  height: 200px; 
+  object-fit: cover; 
 }
 
 .mostViewedCard:hover img {
@@ -534,6 +537,10 @@ header::after {
 .mostViewedContainer,
 .testimonialsContainer {
   padding: 4rem 1rem;
+}
+
+.mostViewedContainer2, .mostViewedContainer3, .mostViewedContainer4 {
+  opacity: 0;
 }
 
 .header {

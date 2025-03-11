@@ -23,7 +23,7 @@
           <span class="bar"></span>
         </div>
         <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html" class="home">Home</a></li>
           <li class="dropdown">
             <a href="#">My Account ▾</a>
             <ul class="dropdown-menu">
@@ -31,7 +31,7 @@
               <li><a href="">Logout</a></li>
             </ul>
           </li>
-          <li><a class="loginButton" >Login</a></li>
+          <li><a class="loginButton" id="formOpen">Login</a></li>
         </ul>
       </nav>
 
@@ -59,62 +59,74 @@
       </div>
     </header>
 
-    <div class="login-container">
-      <h2>LOGIN</h2>
-      <form id="login-form">
-        <label for="email">EMAIL:</label>
-        <input type="email" id="email" name="email" required>
-        <input id="logSubmit" type="submit" value="Login Now">
-      </form>
-<div class="loginSignup">
-  Create an account? <a class="signup">Sign up</a>
-</div>
+    <div class="loginContainer">
+      <i class="ri-close-line formClose"></i>
+      <div class="form loginForm">
+        <form action="#">
+          <h2>Login</h2>
+          <div class="inputBox">
+            <input type="email" placeholder="Enter your email" />
+            <i class="ri-mail-line email"></i>
+          </div>
+
+          <button class="buttonLogin">Login Now</button>
+
+          <div class="loginSignUp">
+            Create a new account? <a href="#" id="signUp">Signup</a>
+          </div>
+        </form>
+      </div>
+
+      <div class="form signUpForm">
+        <form action="#">
+          <h2>Signup</h2>
+          <div class="inputBox">
+            <input type="email" placeholder="Create your email" />
+            <i class="ri-mail-line email"></i>
+          </div>
+
+          <div class="inputBox">
+            <input type="email" placeholder="Enter your name" />
+            <i class="ri-account-box-line email"></i>
+          </div>
+
+          <div class="inputBox">
+            <input type="email" placeholder="Enter your phone number" />
+            <i class="ri-phone-line email"></i>
+          </div>
+
+          <button class="buttonLogin">Signup Now</button>
+
+          <div class="loginSignUp">
+            Already have an account? <a href="#" id="login">Login</a>
+          </div>
+        </form>
+      </div>
     </div>
 
-    <div class="signup-container">
-      <h2>SIGN-UP</h2>
-      <form id="signup-form">
-        <label for="uname">Enter your Name:</label>
-        <input type="text" id="uname" name="uname" />
-
-        <label for="email">Enter your Email:</label>
-        <input type="email" id="email" name="email" required />
-
-        <label for="phoN">Enter your Number:</label>
-        <input type="text" id="phoN" name="phoN" />
-        <input id="Press" type="submit" value="SignUp Now">
-      </form>
-
-      <div class="loginSignup">
-        Already have an account? <a class="signup">Log in</a>
-      </div>    </div>
-
-
-      <section class="sectionContainer mostViewedContainer">
-        <div class="mostViewedHeader">
-          <div class="mostViewedHeaderContent">
-            <h2 class="sectionHeader">Browse Studios</h2>
-            <p>
-              Discover the most viewed creative studio rentals! Find the best
-              deals with expert insights, market trends, and top-rated spaces.
-            </p>
-          </div>
-          <button class="btn">View All Studios</button>
+    <section class="sectionContainer mostViewedContainer">
+      <div class="mostViewedHeader">
+        <div class="mostViewedHeaderContent">
+          <h2 class="sectionHeader">Browse Studios</h2>
+          <p>
+            Discover the most viewed creative studio rentals! Find the best
+            deals with expert insights, market trends, and top-rated spaces.
+          </p>
         </div>
-      
-        <div class="studio-filter">
-          <a href="#" class="active" data-category="recording">Recording Studio</a>
-          <a href="#" data-category="photography">Photography Studio</a>
-          <a href="#" data-category="film">Film Studio</a>
-          <a href="#" data-category="podcast">Podcast Studio</a>
-        </div>
-      
-        <div class="mostViewedGrid" id="mostViewedGrid">
-        </div>
-      </section>
-      
-       
+        <button class="btn">View All Studios</button>
+      </div>
 
+      <div class="studio-filter">
+        <a href="#" class="active" data-category="recording"
+          >Recording Studio</a
+        >
+        <a href="#" data-category="photography">Photography Studio</a>
+        <a href="#" data-category="film">Film Studio</a>
+        <a href="#" data-category="podcast">Podcast Studio</a>
+      </div>
+
+      <div class="mostViewedGrid" id="mostViewedGrid"></div>
+    </section>
 
     <div class="sectionContainer testimonialsContainer">
       <div class="header">

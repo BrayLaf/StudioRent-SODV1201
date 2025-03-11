@@ -21,7 +21,6 @@ body {
   font-family: "Montserrat", serif;
 }
 
-
 .navbar {
   width: 100vw;
   background: transparent;
@@ -140,168 +139,120 @@ nav {
 
 /* Login CSS */
 
-.login-container {
+.loginContainer {
+  position: fixed;
   display: none;
+  max-width: 320px;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  z-index: 105;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.loginContainer.show {
+  display: block;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease-out;
+}
+
+body.show::before {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.formClose {
   position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-z-index: 101; 
-  background: #d9d3d3;
-  justify-content: center;
-  align-content: center;
-  padding: 40px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  border-radius: 10px;
-  width: 340px;
-}
-
-.login-container h2 {
-  margin-bottom: 40px;
-  color: #1b3d1c;
-  font-size: 24px;
-}
-
-.login-container label {
-  display: block;
-  text-align: left;
-  font-weight: bold;
-  margin-top: 10px;
-  color: #1b3d1c;
-}
-
-.login-container input {
-  width: 100%;
-  padding: 10px;
-  margin-top: 10px;
-  border: 1px solid #809baa;
-  border-radius: 6px;
-  background: #e3e7f0;
-  color: #333;
-  font-size: 14px;
-}
-
-.login-container input:focus {
-  border-color: #1b3d1c;
-  outline: none;
-}
-
-.login-container #logSubmit {
-  width: 100%;
-  padding: 12px;
-  margin-top: 50px;
-  background-color: #1b3d1c;
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  border-radius: 6px;
-  transition: background 0.3s;
-}
-
-.loginSignup {
-font-size: 13px;
-text-align: center;
-margin-top: 15px;
-}
-
-.login-container #logSubmit:hover {
-  background-color: #2d4d2e;
-  color: var(--white);
-  box-shadow: var(--primaryColor3);
-  transition: 0.3s;
-  scale: 1.1;
-  transition: scale 0.4s ease-in-out;
-}
-.login-container a:hover{
-  cursor: pointer;
+  top: 10px;
+  right: 20px;
   color: var(--primaryColor3);
-
+  font-size: 22px;
+  opacity: 0.7;
+  cursor: pointer;
 }
 
-/* Signup */
-
-.signup-container {
-display: none;
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-z-index: 101; 
-  background: #d9d3d3;
-  justify-content: center;
-  align-content: center;
-  padding: 40px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+.loginContainer h2 {
+  font-size: 22px;
+  color: var(--primaryColor3);
   text-align: center;
-  border-radius: 10px;
-  width: 340px;
 }
 
-.signup-container h2 {
-  margin-bottom: 40px;
-  color: #1b3d1c;
-  font-size: 24px;
+.inputBox {
+  position: relative;
+  margin-top: 30px;
+  height: 40px;
 }
 
-.signup-container label {
-  display: block;
-  text-align: left;
-  font-weight: bold;
-  margin-top: 10px;
-  color: #1b3d1c;
-}
-
-.signup-container input {
+.inputBox input {
+  height: 100%;
   width: 100%;
-  padding: 10px;
-  margin-top: 10px;
-  border: 1px solid #809baa;
-  border-radius: 6px;
-  background: #e3e7f0;
-  color: #333;
-  font-size: 14px;
-}
-
-.signup-container input:focus {
-  border-color: #1b3d1c;
-  outline: none;
-}
-
-.signup-container #Press {
-  width: 100%;
-  padding: 12px;
-  margin-top: 50px;
-  background-color: #1b3d1c;
-  color: white;
   border: none;
-  cursor: pointer;
-  font-size: 16px;
-  border-radius: 6px;
-  transition: background 0.3s;
+  outline: none;
+  padding: 0 30px;
+  color: var(--textDark);
+  transition: all 0.2 ease;
+  border-bottom: 1.5px solid #aaaaaa;
 }
 
-.loginSignup {
-font-size: 13px;
-text-align: center;
-margin-top: 15px;
+.inputBox input:focus {
+  border-color: var(--primaryColor3);
 }
 
-.signup-container #Press:hover {
-  background-color: #2d4d2e;
-  color: var(--white);
-  box-shadow: var(--primaryColor3);
-  transition: 0.3s;
-  scale: 1.1;
-  transition: scale 0.4s ease-in-out;
+.inputBox i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
 }
 
-.signup-container a:hover{
-  cursor: pointer;
+.inputBox i.email {
+  left: 0;
+  color: #aaaaaa;
+}
+
+.inputBox input:focus ~ i.email {
   color: var(--primaryColor3);
 }
 
+.loginContainer .buttonLogin {
+  background: var(--primaryColor3);
+  margin-top: 30px;
+  width: 100%;
+  padding: 12px 0;
+  border-radius: 10px;
+  color: var(--primaryColor2);
+  cursor: pointer;
+}
+
+.loginSignUp {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.signUpForm {
+  display: none;
+}
 
 .bar {
   background: var(--white);
@@ -505,9 +456,9 @@ header::after {
 .mostViewedCard img {
   border-radius: 5px;
   transition: 0.3s;
-  width: 400px; 
-  height: 200px; 
-  object-fit: cover; 
+  width: 400px;
+  height: 250px;
+  object-fit: cover;
 }
 
 .mostViewedCard:hover img {
@@ -539,7 +490,9 @@ header::after {
   padding: 4rem 1rem;
 }
 
-.mostViewedContainer2, .mostViewedContainer3, .mostViewedContainer4 {
+.mostViewedContainer2,
+.mostViewedContainer3,
+.mostViewedContainer4 {
   opacity: 0;
 }
 

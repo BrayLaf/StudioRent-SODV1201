@@ -14,33 +14,45 @@
 <body>
   <header>
     <nav class="navbar">
-      <div class="logo"></div>
+      <div class="logo">ArtistSpaces</div>
       <div class="menu-toggle" id="mobile-menu">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
       </div>
       <ul class="nav-links">
-        <li><a href="/html/index.html">Home</a></li>
+        <li><a href="/html/index.html" class="home">Home</a></li>
         <li class="dropdown">
           <a href="#">My Account ▾</a>
           <ul class="dropdown-menu">
             <li><a href="/html/pages/Account.html">My Profile</a></li>
-            <li><a href="#">Logout</a></li>
+            <li><a href="">Logout</a></li>
           </ul>
         </li>
-        <li><a href="#">Contact</a></li>
+        <li><a class="loginButton" id="formOpen">Login</a></li>
       </ul>
     </nav>
-    
+
+    <div class="sectionContainer headerContainer">
+      <div class="headerContent">
+        <h1>Available Studios</h1>
+        <form>
+          <input
+            type="text"
+            placeholder="Enter a location to start searching"
+          />
+          <button class="btn">Send Now</button>
+        </form>
+      </div>
+    </div>
+  </header>
+
     <div class="mainContainer">
 
     <h1 class="pageTitle" id="keyinfo">Edit Studio</h1>
     
       
       <div class="sidebar">
-        <div class="logo">ArtistSpaces</div>
-
         <a href="#keyinfo"><p class="sideKey1">Key Information</p></a>
         <a href="#imageUpload"><p class="sideKey2">Photos & Media</p></a>
         <a href="#locadetails"><p class="sideKey3">Location & Details</p></a>
@@ -102,7 +114,6 @@
           </form>
       </div>
     </div>
-  </header>
 </body>
 
 

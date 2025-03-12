@@ -68,16 +68,17 @@ $(function () {
       }
   
       // Array to store users
-      let UserArray = [];
-  
+      //let UserArray = [];
+      let newUser;
       // Handle Signup Form Submission
-      $('.signUpForm form').submit(function (e) {
+      $('.signUpForm').submit(function (e) {
           e.preventDefault();
           const formData = new FormData(e.target);
           const data = Object.fromEntries(formData.entries());
   
-          const newUser = new User(data.name, data.email, data.phone);
-          UserArray.push(newUser);
+          newUser = new User(data.name, data.email, data.number);
+          localStorage.setItem(newUser.name, newUser);
+          //UserArray.push(newUser);
   
           console.log("New User Created:", newUser);
   
@@ -91,11 +92,12 @@ $(function () {
           const formData = new FormData(e.target);
           const data = Object.fromEntries(formData.entries());
   
-          let userFound = UserArray.some(user => user.email === data.email);
+          let userFound = (user => user.email === data.email);
   
           if (userFound) {
               $(".loginContainer").removeClass("show");
-              $("#overlay").fadeOut(); 
+              $("#overlay").fadeOut();
+              localStorage.setItem("current user", newUser) 
               console.log("User logged in successfully!");
           } else {
               console.log("No such user exists!");

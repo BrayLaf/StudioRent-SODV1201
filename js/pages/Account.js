@@ -7,3 +7,11 @@ document.addEventListener("DOMContentLoaded", () => {
     toggleButton.classList.toggle("rotate");
   });
 });
+
+
+
+//set elements based off local storage 
+
+
+let currentUser = localStorage.getItem("current user");
+console.log(currentUser);

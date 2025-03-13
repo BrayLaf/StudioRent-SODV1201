@@ -6,7 +6,8 @@
     <title>Editing Listing</title>
     <link rel="stylesheet" href="/css/pages/EditListings.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="/js/pages/AvailableStudios.js"></script>
+    <script src="/js/scripts.js"></script>
+    <script src="/js/pages/EditListing.js"></script>
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
       rel="stylesheet"
@@ -89,147 +90,99 @@
 
     <div class="container">
       <aside class="sidebar filter">
-        <h2>Filter</h2>
-        <form>
-          <label for="location">Location</label>
-          <select id="location" name="location">
-            <option value="all">All</option>
-            <option value="city1">City 1</option>
-            <option value="city2">City 2</option>
-          </select>
-
-          <label for="price">Price Range</label>
-          <input
-            type="number"
-            id="min-price"
-            name="min-price"
-            placeholder="Min"
-          />
-          <input
-            type="number"
-            id="max-price"
-            name="max-price"
-            placeholder="Max"
-          />
-
-          <label for="size">Size (sq ft)</label>
-          <input type="number" id="size" name="size" placeholder="Enter size" />
-
-          <label for="amenities">Amenities</label>
-          <div class="checkbox-group">
-            <input type="checkbox" id="wifi" name="amenities" value="wifi" />
-            <label for="wifi">WiFi</label>
-            <input
-              type="checkbox"
-              id="parking"
-              name="amenities"
-              value="parking"
-            />
-            <label for="parking">Parking</label>
-          </div>
-
-          <button type="submit">Apply Filters</button>
-        </form>
+        <h2>Sections</h2>
+        <a href="#keyInfo"><p class="sideKey1">Key Information</p></a>
+        <a href="#imageUpload"><p class="sideKey2">Photos & Media</p></a>
+        <a href="#locadetails"><p class="sideKey3">Location & Details</p></a>
+        <a href="#property-form"><p class="sideKey4">Contact</p></a>
       </aside>
 
-      <main class="studio-list">
-        <div class="studio-card">
-            <div class="studioImg">
-                <div class="image-container" style="grid-area: img-1">
-                    <img src="/assets-images/studio 1/exterior1.1.jpg" alt="Studio 1" />
-                </div>
-                <div class="image-container" style="grid-area: img-2">
-                    <img src="/assets-images/studio 1/exterior1.1.jpg" alt="Studio 1" />
-                </div>
-                <div class="image-container" style="grid-area: img-3">
-                    <img src="/assets-images/studio 1/exterior1.1.jpg" alt="Studio 1" />
-                </div>
-                <div class="image-container" style="grid-area: img-4">
-                    <img src="/assets-images/studio 1/exterior1.1.jpg" alt="Studio 1" />
-                </div>
-                <div class="image-container mainImage" style="grid-area: img-5">
-                    <img src="/assets-images/studio 1/exterior1.1.jpg" alt="Studio 1" />
-                </div>
-            </div>
-            <div class="studioDesc">
-                <h3>Studio Name</h3>
-                <p>Location: City 1</p>
-                <p>Price: $1000/month</p>
-                <p>Size: 500 sq ft</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi facere laboriosam perspiciatis cumque sequi sit expedita eaque praesentium magnam quidem! Expedita sunt, eum quasi labore veritatis consectetur sequi dolorem nisi.</p>
-            </div>
-
-            <div class="cardButton">
-                <button class="btn">View Listing</button>
-            </div>
+      <main class="editing">
+        <h2 id="keyInfo">Rental Type</h2>
+        <div class="btnDiv">
+          <button class="editbtn">Multi Day</button>
+          <button class="editbtn">Single Day</button>
         </div>
-        
-        <div class="studio-card">
-            <div class="studioImg">
-                <div class="image-container" style="grid-area: img-1">
-                    <img src="/assets-images/studio 1/exterior1.1.jpg" alt="Studio 1" />
-                </div>
-                <div class="image-container" style="grid-area: img-2">
-                    <img src="/assets-images/studio 1/exterior1.1.jpg" alt="Studio 1" />
-                </div>
-                <div class="image-container" style="grid-area: img-3">
-                    <img src="/assets-images/studio 1/exterior1.1.jpg" alt="Studio 1" />
-                </div>
-                <div class="image-container" style="grid-area: img-4">
-                    <img src="/assets-images/studio 1/exterior1.1.jpg" alt="Studio 1" />
-                </div>
-                <div class="image-container mainImage" style="grid-area: img-5">
-                    <img src="/assets-images/studio 1/exterior1.1.jpg" alt="Studio 1" />
-                </div>
-            </div>
-            <div class="studioDesc">
-                <h3>Studio Name</h3>
-                <p>Location: City 1</p>
-                <p>Price: $1000/month</p>
-                <p>Size: 500 sq ft</p>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore quidem quo dolores velit? Delectus fuga veritatis saepe minima, tenetur voluptatem in, autem voluptate sit sequi ipsa natus nostrum, et dolorum minus? Minima non sequi odio?</p>
-            </div>
-
-            <div class="cardButton">
-                <button class="btn">View Listing</button>
-            </div>
+        <h2>Studio Type</h2>
+        <div class="btnDiv">
+          <button class="editbtn">Recording</button>
+          <button class="editbtn">Photography</button>
+          <button class="editbtn">Film</button>
+          <button class="editbtn">Podcast</button>
+        </div>
+        <h2>Subtype</h2>
+        <div class="btnDiv">
+          <button class="editbtn">Apartment</button>
+          <button class="editbtn">Condo</button>
+          <button class="editbtn">Duplex</button>
+          <button class="editbtn">House</button>
+        </div>
+        <h2>SoundProofing?</h2>
+        <div class="btnDiv">
+          <button class="editbtn">Yes</button>
+          <button class="editbtn">No</button>
+        </div>
+        <h2 id="keyInfo">Equipment & Amenities</h2>
+        <div class="btnDiv multi-select">
+          <button class="editbtn">Microphones</button>
+          <button class="editbtn">Cameras</button>
+          <button class="editbtn">Tripods</button>
+          <button class="editbtn">Green Screen</button>
+          <button class="editbtn">Mixers</button>
+          <button class="editbtn">Speakrs</button>
+          <button class="editbtn">With Wifi</button>
+          <button class="editbtn">Backdrops & Stands</button>
+          <button class="editbtn">3D Printers</button>
+          <button class="editbtn">Reflectors & Diffusers</button>
+          <button class="editbtn">Studio Headphones</button>
+          <button class="editbtn">Audio Mixers</button>
+          <button class="editbtn">High-Resolution Monitors</button>
+          <button class="editbtn">VR Equipment</button>
+          <button class="editbtn">Projection Screens</button>
         </div>
 
-        <div class="studio-card">
-          <div class="studioImg">
-              <div class="image-container" style="grid-area: img-1">
-                  <img src="/assets-images/studio 1/exterior1.1.jpg" alt="Studio 1" />
-              </div>
-              <div class="image-container" style="grid-area: img-2">
-                  <img src="/assets-images/studio 1/exterior1.1.jpg" alt="Studio 1" />
-              </div>
-              <div class="image-container" style="grid-area: img-3">
-                  <img src="/assets-images/studio 1/exterior1.1.jpg" alt="Studio 1" />
-              </div>
-              <div class="image-container" style="grid-area: img-4">
-                  <img src="/assets-images/studio 1/exterior1.1.jpg" alt="Studio 1" />
-              </div>
-              <div class="image-container mainImage" style="grid-area: img-5">
-                  <img src="/assets-images/studio 1/exterior1.1.jpg" alt="Studio 1" />
-              </div>
-          </div>
-          <div class="studioDesc">
-              <h3>Studio Name</h3>
-              <p>Location: City 1</p>
-              <p>Price: $1000/month</p>
-              <p>Size: 500 sq ft</p>
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore quidem quo dolores velit? Delectus fuga veritatis saepe minima, tenetur voluptatem in, autem voluptate sit sequi ipsa natus nostrum, et dolorum minus? Minima non sequi odio?</p>
-          </div>
-
-          <div class="cardButton">
-              <button class="btn">View Listing</button>
-          </div>
-      </div>
-
-
-        </main>
+        <h2 id="imageUpload">Images</h2>
+        <div class="imageUpload">
+          <h2 class="postImages">Upload Images</h2>
+          <label for="fileUpload" class="fileLabel">Choose Images</label>
+          <input class="desc fileInput" type="file" id="fileUpload" multiple />
+          <p class="uploadNote">You can upload multiple images at once.</p>
+        </div>
+        <h2>Title</h2>
+        <input
+          class="desc"
+          placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        />
+        <h2 id="locadetails">Location & details</h2>
+        <h3 class="propertyTitle">Property Address</h3>
+        <input
+          class="desc"
+          placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        />
+        <h3>Description</h3>
+        <textarea
+          class="desc"
+          placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          maxlength="500"
+        ></textarea>
+        <div id="form-container">
+          <h2>Property Owner Contact Form</h2>
+          <form
+            class="contactDetails"
+            id="property-form"
+            action="#"
+            method="POST"
+          >
+            <label for="email">Email:</label>
+            <input class="desc" type="email" id="email" name="email" required />
+            <label for="phone">Phone Number:</label>
+            <input class="desc" type="tel" id="phone" name="phone" required />
+            <button class="editbtn2" type="submit">Submit</button>
+          </form>
+        </div>
+      </main>
     </div>
-    
+
     <footer class="footer">
       <div class="footer-container">
         <div class="footer-section footer-logo">

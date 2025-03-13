@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/pages/Manage.css" />
     <script type="text/javascript" src="/js/pages/Manage.js"></script>
+    <script src="/js/scripts.js"></script>
+
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
       rel="stylesheet"
@@ -47,7 +49,7 @@
             <span>Home</span>
           </a>
         </li>
-        <li >
+        <li>
           <a href="/html/pages/Account.html">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -63,7 +65,7 @@
             <span>My Account</span>
           </a>
         </li>
-        <li class="active"> 
+        <li class="active">
           <a href="/html/pages/Manage.html">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -99,103 +101,97 @@
     </aside>
 
     <main>
+      <div class="menuOption">
+        <div class="title">Manage Studios</div>
 
-<div class="menuOption">
-  <div class="title">Manage Studios</div>
-
-  <div class="item1">
-      <div class="dropdown">
-        <div class="select">
-<span class="selected">Studio Type</span>
-<div class="caret"></div>
+        <div class="item1">
+          <div class="dropdown">
+            <div class="select">
+              <span class="selected">Studio Type</span>
+              <div class="caret"></div>
+            </div>
+            <ul class="menu">
+              <li>Photography</li>
+              <li>Creative</li>
+              <li>Podcast</li>
+              <li>Recording</li>
+            </ul>
+          </div>
         </div>
-      <ul class="menu">
-        <li>Photography</li>
-        <li>Creative</li>
-        <li>Podcast</li>
-        <li>Recording</li>
-      </ul>
-    </div> 
-  </div>
 
-  <div class="item2">
-    <div class="dropdown">
-      <div class="select">
-<span class="selected">All Statuses</span>
-<div class="caret"></div>
+        <div class="item2">
+          <div class="dropdown">
+            <div class="select">
+              <span class="selected">All Statuses</span>
+              <div class="caret"></div>
+            </div>
+            <ul class="menu">
+              <li>Active</li>
+              <li>Unavailable</li>
+              <li>Rented</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="item3">
+          <div class="dropdown">
+            <div class="select">
+              <span class="selected">Location</span>
+              <div class="caret"></div>
+            </div>
+            <ul class="menu">
+              <li>Southwest</li>
+              <li>Southeast</li>
+              <li>Northwest</li>
+              <li>Northeast</li>
+            </ul>
+          </div>
+        </div>
       </div>
-    <ul class="menu">
-      <li>Active</li>
-      <li>Unavailable</li>
-      <li>Rented</li>
-    </ul>
-  </div> 
-</div>
 
-<div class="item3">
-  <div class="dropdown">
-    <div class="select">
-<span class="selected">Location</span>
-<div class="caret"></div>
-    </div>
-  <ul class="menu">
-    <li>Southwest</li>
-    <li>Southeast</li>
-    <li>Northwest</li>
-    <li>Northeast</li>
-  </ul>
-</div> 
-</div>
-
-    </div>
-
-    <div class="container">
-
-      <div class="listing1">
-          <img src="/Home/assets/studio 2/exterior2.1.jpg" alt="Property Image">
+      <div class="container">
+        <div class="listing1">
+          <img
+            src="/Home/assets/studio 2/exterior2.1.jpg"
+            alt="Property Image"
+          />
           <div class="details">
-              <h3>Creative Studio</h3>
-              <p><i class="ri-map-pin-line"></i> Calgary, Canada</p>
-              <p><i class="ri-money-dollar-circle-line"></i> $500,000</p>
-                    </div>
+            <h3>Creative Studio</h3>
+            <p><i class="ri-map-pin-line"></i> Calgary, Canada</p>
+            <p><i class="ri-money-dollar-circle-line"></i> $500,000</p>
+          </div>
           <span class="status available">Available</span>
           <div class="dropdown2">
-              <div class="select2">
-                  Actions ▼
-              </div>
-              <ul class="menu2">
-                  <li>Edit</li>
-                  <li>View</li>
-                  <li>Delete</li>
-              </ul>
+            <div class="select2">Actions ▼</div>
+            <ul class="menu2">
+              <li>Edit</li>
+              <li>View</li>
+              <li><a href="/html/pages/EditListings.html">Delete</a></li>
+            </ul>
           </div>
-      </div>
-    
-      <div class="listing2">
-          <img src="/Home/assets/studio 3/exterior3.1.jpg" alt="Property Image">
+        </div>
+
+        <div class="listing2">
+          <img
+            src="/Home/assets/studio 3/exterior3.1.jpg"
+            alt="Property Image"
+          />
           <div class="details">
-              <h3>Photograpy Studio</h3>
-                <p><i class="ri-map-pin-line"></i> Chinook, Calgary, Canada</p>
-                <p><i class="ri-money-dollar-circle-line"></i> $350,000</p>
-                      </div>
+            <h3>Photograpy Studio</h3>
+            <p><i class="ri-map-pin-line"></i> Chinook, Calgary, Canada</p>
+            <p><i class="ri-money-dollar-circle-line"></i> $350,000</p>
+          </div>
           <span class="status unavailable">Unavailable</span>
           <div class="dropdown2">
-              <div class="select2">
-                  Actions ▼
-              </div>
-              <ul class="menu2">
-                  <li>Edit</li>
-                  <li>View</li>
-                  <li>Delete</li>
-              </ul>
+            <div class="select2">Actions ▼</div>
+            <ul class="menu2">
+              <li>Edit</li>
+              <li>View</li>
+              <li><a href="/html/pages/EditListings.html">Delete</a></li>
+            </ul>
           </div>
+        </div>
       </div>
-    
-    </div>
-    
-  
-
-
     </main>
   </body>
 </html>

@@ -417,6 +417,11 @@ header::after {
   color: var(--textLight);
 }
 
+.mostViewedHeader a {
+  text-decoration: none;
+  color: var(--white);
+}
+
 .studio-filter {
   margin-top: 2rem;
   display: flex;

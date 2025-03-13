@@ -506,6 +506,7 @@
     .image-container {
         margin: 0; 
         padding: 0;
+        object-fit: cover;
     }
     
 
@@ -520,6 +521,7 @@
         grid-template-areas: 
             "img-1 img-2 img-5"
             "img-3 img-4 img-5";
+        object-fit: cover;
     
     }
     

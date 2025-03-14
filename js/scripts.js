@@ -22,7 +22,6 @@ $(function () {
         }
     });
 
-    $(document).ready(function () {
       //overlay effect when login button is clicked
       let overlay = $("<div></div>").attr("id", "overlay").css({
           position: "fixed",
@@ -69,15 +68,14 @@ $(function () {
   
       // Array to store users
       //let UserArray = [];
-      let newUser;
       // Handle Signup Form Submission
       $('.signUpForm').submit(function (e) {
           e.preventDefault();
           const formData = new FormData(e.target);
           const data = Object.fromEntries(formData.entries());
   
-          newUser = new User(data.name, data.email, data.number);
-          localStorage.setItem(newUser.name, newUser);
+          let newUser = new User(data.name, data.email, data.number);
+          localStorage.setItem(newUser.email, JSON.stringify(newUser));
           //UserArray.push(newUser);
   
           console.log("New User Created:", newUser);
@@ -87,25 +85,25 @@ $(function () {
       });
   
       // Handle Login Form Submission
-      $('.loginForm form').submit(function (e) {
+      $('.loginForm').submit(function (e) {
           e.preventDefault();
           const formData = new FormData(e.target);
           const data = Object.fromEntries(formData.entries());
-  
-          let userFound = (user => user.email === data.email);
-  
-          if (userFound) {
+
+          let currentUser = JSON.parse(localStorage.getItem(data.email));
+          console.log(currentUser);
+          console.log(currentUser.name);
+
+          if (currentUser) {
+              $(".loginButton").hide();
               $(".loginContainer").removeClass("show");
               $("#overlay").fadeOut();
-              localStorage.setItem("current user", newUser) 
+              localStorage.setItem("current user", JSON.stringify(currentUser));
               console.log("User logged in successfully!");
           } else {
               console.log("No such user exists!");
           }
       });
-  });
-    
-    $(document).ready(function () {
       //sample studio data - to be filled in future
         const studioData = {
           recording: [
@@ -141,7 +139,6 @@ $(function () {
             { img: "/assets-images/studio 3/interior3.1.jpg" },
           ],
         };
-      
         
         function updateStudios(category) {
           let grid = $("#mostViewedGrid");
@@ -169,6 +166,4 @@ $(function () {
         });
       
         updateStudios("recording");
-      });      
-
 });

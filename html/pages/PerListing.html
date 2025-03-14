@@ -4,13 +4,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/pages/Listings.css">
-  <script src="/js/pages/Listing.js"></script>
+  <link rel="stylesheet" href="/css/pages/PerListing.css">
+  <script src="/js/pages/PerListing.js"></script>
+  <script src="/js/scripts.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet" />
   <title>View Listings</title>
 </head>
 
 <body>
+  
+
   <header>
     <nav class="navbar">
       <div class="logo">ArtistSpaces</div>
@@ -20,28 +23,112 @@
         <span class="bar"></span>
       </div>
       <ul class="nav-links">
-        <li><a href="\Home\index.html">Home</a></li>
+        <li><a href="/html/index.html" class="home">Home</a></li>
         <li class="dropdown">
           <a href="#">My Account ▾</a>
           <ul class="dropdown-menu">
-            <li><a href="account.html">My Profile</a></li>
-            <li><a href="#">Logout</a></li>
+            <li><a href="/html/pages/Account.html">My Profile</a></li>
+            <li><a href="">Logout</a></li>
           </ul>
         </li>
-        <li><a href="#">Contact</a></li>
+        <li><a class="loginButton" id="formOpen">Login</a></li>
       </ul>
     </nav>
+
+    <div class="sectionContainer headerContainer">
+      <div class="headerContent">
+<span></span>        
+      </div>
+    </div>
+  </header>
+
+  <div class="loginContainer">
+    <i class="ri-close-line formClose"></i>
+    <div class="form loginForm">
+      <form action="#">
+        <h2>Login</h2>
+        <div class="inputBox">
+          <input type="email" placeholder="Enter your email" />
+          <i class="ri-mail-line email"></i>
+        </div>
+
+        <button class="buttonLogin">Login Now</button>
+
+        <div class="loginSignUp">
+          Create a new account? <a href="#" id="signUp">Signup</a>
+        </div>
+      </form>
+    </div>
+
+    <div class="form signUpForm">
+      <form action="#">
+        <h2>Signup</h2>
+        <div class="inputBox">
+          <input type="email" placeholder="Create your email" />
+          <i class="ri-mail-line email"></i>
+        </div>
+
+        <div class="inputBox">
+          <input type="email" placeholder="Enter your name" />
+          <i class="ri-account-box-line email"></i>
+        </div>
+
+        <div class="inputBox">
+          <input type="email" placeholder="Enter your phone number" />
+          <i class="ri-phone-line email"></i>
+        </div>
+
+        <button class="buttonLogin">Signup Now</button>
+
+        <div class="loginSignUp">
+          Already have an account? <a href="#" id="login">Login</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="studioContainer">
+    
+    <div class="titleImage">
     <h1 class="listTitle">
       Modern Loft Studio
     </h1>
-    <div class="listing-imgs">
-      <img class="firstimg" src="/assets-images/studio 1/exterior1.1.jpg">
-      <img src="/assets-images/studio 1/interior1.1.jpg">
-      <img src="/assets-images/studio 1/interior1.2.jpg">
-      <img src="/assets-images/studio 1/interior1.3.jpg">
-      <img src="/assets-images/studio 1/interior1.4.jpg">
+
+    <div class="studioImg">
+      <div class="image-container" style="grid-area: img-1">
+        <img
+          src="/assets-images/studio 1/echowave 5.jpeg"
+          alt="Studio 1"
+        />
+      </div>
+      <div class="image-container" style="grid-area: img-2">
+        <img
+          src="/assets-images/studio 1/Echowave 2.jpg"
+          alt="Studio 1"
+        />
+      </div>
+      <div class="image-container" style="grid-area: img-3">
+        <img
+          src="/assets-images/studio 1/Echowave 3.jpeg"
+          alt="Studio 1"
+        />
+      </div>
+      <div class="image-container" style="grid-area: img-4">
+        <img
+          src="/assets-images/studio 1/echowave 4.jpeg"
+          alt="Studio 1"
+        />
+      </div>
+      <div class="image-container mainImage" style="grid-area: img-5">
+        <img
+          src="/assets-images/studio 1/Echowave 1.jpeg"
+          alt="Studio 1"
+        />
+      </div>
     </div>
-  </header>
+  </div>
+  
+
   <div class="list-info">
     <div class="about card">
       <h2 class="price aboutTitle">$1500/month </h2>
@@ -57,6 +144,7 @@
          Website: www.modernloftstudios.com</p>
     </aside>
   </div>
+
   <h2 class="section-title">Other Listings</h2>
 
   <div class="media-scroller snaps-inline">
@@ -106,44 +194,8 @@
       </div>
     </div>
   </div>
+</div>
   
-  <footer class="footer">
-    <div class="footerContainer">
-      <div class="footerLogo">
-        <a href="#">ArtistSpaces</a>
-      </div>
-      <div class="footerLinks">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Browse Studios</a></li>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Contact Us</a></li>
-        </ul>
-      </div>
-      <div class="footerContact">
-        <h4>Contact Us</h4>
-        <p>Email: info@artistspaces.com</p>
-        <p>Phone: +1 800 123 4547</p>
-        <p>Address: 123 Creative Blvd, Art City</p>
-      </div>
-      <div class="footerSocials">
-        <h4>Follow Us</h4>
-        <div class="socialIcons">
-          <a href="#"><i class="ri-facebook-circle-line"></i></a>
-          <a href="#"><i class="ri-twitter-line"></i></a>
-          <a href="#"><i class="ri-instagram-line"></i></a>
-          <a href="#"><i class="ri-linkedin-box-line"></i></a>
-        </div>
-      </div>
-    </div>
-    <div class="footerBottom">
-      <p>&copy; 2025 ArtistSpaces. All Rights Reserved.</p>
-      <p>Designed with passion by the ArtistSpaces Team.</p>
-    </div>
-  </footer>
-
-
 
 </body>
 

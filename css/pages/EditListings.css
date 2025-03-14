@@ -375,6 +375,7 @@ header {
   margin: 20px auto;
   padding: 20px;
   gap: 20px;
+  
 }
 
 .sidebar {
@@ -481,6 +482,11 @@ button.selected {
   justify-content: flex-start;
   margin: 0 auto;
   padding: 0 8px;
+
+  background: #ffffff;
+padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
 .editing button {

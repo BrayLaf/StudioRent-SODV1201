@@ -19,6 +19,7 @@
 
     body {
     font-family: "Montserrat", serif;
+    background: whitesmoke;
     }
 
     .navbar {
@@ -135,6 +136,12 @@
 
     .menu-toggle.active .bar:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    form input::placeholder {
+        font-size: 14px;           
+        color: #808080;           
+        padding:10px;      
     }
 
     /* Login CSS */
@@ -507,15 +514,20 @@
         margin: 0; 
         padding: 0;
         object-fit: cover;
+        width: 200px;
+        height: 200px;
     }
     
+    .mainImage {
+        width: 250px;
+        height: 410px;
+    }
 
     .studioImg {
-        width: 70%;
         gap: 10px;
         display: grid;
         cursor: pointer;
-        align-items: start;
+        align-items: center;
         grid-template-columns: 200px 200px 200px; 
         grid-template-rows: 200px 200px; 
         grid-template-areas: 
@@ -558,16 +570,40 @@
 
     
     .studio-card h3 {
-        color: #1b3d1c;
+        color: var(--primaryColor3);
         margin-bottom: 10px;
     }
 
     .studio-card p {
-        color: #333;
+        color: var(--textDark);
         margin-bottom: 8px;
     }
 
+    .checkbox-group {
+        display: flex;               
+        flex-direction: row;          
+        align-items: center;        
+        gap: 10px;                    
+    }
+    
+    .checkbox-group input {
+        margin: 0;                  
+        width: 18px;                
+        height: 18px;                
+        cursor: pointer;           
+    }
+    
+    .checkbox-group label {
+        margin: 0;                  
+        font-size: 14px;            
+        color: var(--textDark);                 
+        cursor: pointer;           
+    }
 
+    .applyFilter {
+        margin-top: 30px;
+    }
+        
     /* -- FOOTER -- */
     .footer {
         background: var(--primaryColor3);

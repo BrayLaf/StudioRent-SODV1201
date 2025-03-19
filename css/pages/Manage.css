@@ -324,6 +324,7 @@ main p {
     position: fixed;
     top: unset;
     bottom: 0;
+    z-index: 101;
 
     > ul {
       padding: 0;
@@ -477,6 +478,16 @@ main p {
   .select {
       width: 200px;
   }
+  
+  .menuOption {
+    font-size: 14px;
+    padding: 8px 12px;
+    display:flex;
+    flex-direction: column;
+    height: 20%;
+    
+    
+  }
 }
 
 @media (max-width: 1200px) {
@@ -504,7 +515,7 @@ main p {
     padding: 8px 12px;
     display:flex;
     flex-direction: column;
-    height: 40%;
+    height: 35%;
     
     
   }
@@ -532,13 +543,19 @@ main p {
 @media (max-width: 900px) {
   .container {
     max-width:auto;
-    margin: auto;
-    height: 70vh;
+    height: auto;
   
     border: 1px solid var(--textDark);
     border-radius: 1em;
     margin-bottom: 20px;
     padding: min(1em, 15%);
+    bottom: 100%;
+  }
+
+  .listing {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
 
 }

@@ -82,28 +82,19 @@
             <span>Manage Studios</span>
           </a>
         </li>
-        <li>
-          <a href="archived.html">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              width="24"
-              height="24"
-              fill="currentColor"
-            >
-              <path
-                d="M4 3H20L22 7V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V7.00353L4 3ZM13 14V10H11V14H8L12 18L16 14H13ZM19.7639 7L18.7639 5H5.23656L4.23744 7H19.7639Z"
-              ></path>
-            </svg>
-            <span>Archived Studios</span>
-          </a>
-        </li>
       </ul>
     </aside>
 
     <main>
       <div class="menuOption">
         <div class="title">My Account</div>
+        
+        <div class="toggleSlider">
+          <input type="checkbox" id="check">
+          <label for="check" class="sliderButton"></label>
+          <span class="modeText" id="modeText">Renter Mode</span>
+        </div>
+
         <form class="accountForm">
           <div class="userDetails">
             <div class="inputInbox">
@@ -127,6 +118,7 @@
             </div>
           </div>
 
+  
           <div class="button">
             <input type="submit" value="Save Changes" />
           </div>

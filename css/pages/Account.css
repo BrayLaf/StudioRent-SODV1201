@@ -239,6 +239,59 @@ form .button input:hover {
   transition: scale 0.4s ease-in-out;
 }
 
+.toggleSlider {
+display: flex;
+align-items: flex-start;
+justify-content: flex-start;
+margin-top: 2em;
+align-items: center;  
+
+}
+
+.sliderButton {
+  background-color: var(--primaryColor1);
+  width: 70px;
+  height: 40px;
+  border-radius: 200px;
+  cursor: pointer;
+  position: relative;
+  transition: 0.2s;
+}
+
+.sliderButton::before {
+  position: absolute;
+  content: '';
+  background-color: var(--primaryColor2);
+  width: 30px;
+  height: 30px;
+  border-radius: 200px;
+  margin: 5px;
+  transition: 0.2s;
+}
+
+.toggleSlider input:checked + .sliderButton {
+  background-color: var(--primaryColor3);
+}
+
+.toggleSlider input:checked + .sliderButton::before  {
+transform: translateX(30px);}
+
+.toggleSlider input {
+  display: none;
+}
+
+.modeText {
+  margin-left: 10px; 
+  font-size: 16px;   
+  color: #333;      
+  transition: color 0.2s ease; 
+}
+
+.toggleSlider input:checked ~ .modeText {
+  color: var(--primaryColor3);  
+}
+
+
 @media (max-width: 584px) {
   .menuOption {
     max-width: 100%;

@@ -45,3 +45,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+
+$(document).ready(function() {
+  $('#check').change(function() {
+    if ($(this).prop('checked')) {
+      $('#modeText').text('Owner Mode');
+    } else {
+      $('#modeText').text('Renter Mode');
+    }
+  });
+});

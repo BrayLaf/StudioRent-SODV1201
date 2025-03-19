@@ -357,7 +357,7 @@ main p {
 .container {
   max-width: 1200px;
   margin: auto;
-  height: 70vh;
+  height: auto;
 
   border: 1px solid var(--textDark);
   border-radius: 1em;
@@ -481,7 +481,6 @@ main p {
   
   .menuOption {
     font-size: 14px;
-    padding: 8px 12px;
     display:flex;
     flex-direction: column;
     height: 20%;
@@ -536,26 +535,52 @@ main p {
     padding: 1em;
     cursor: pointer;
   }
-
+  .container {
+    margin: .5em;
+    margin-bottom: 5em;
+  }
   
 }
+
+@media (max-width: 790px) {
+.menuOption {
+  font-size: 14px;
+  padding: 8px 12px;
+  display:flex;
+  flex-direction: column;
+  height: 25%;
+}
+}
+  
 
 @media (max-width: 900px) {
   .container {
     max-width:auto;
     height: auto;
+    padding: 3em 1em;
   
     border: 1px solid var(--textDark);
     border-radius: 1em;
-    margin-bottom: 20px;
-    padding: min(1em, 15%);
-    bottom: 100%;
+    margin: .5em;
   }
 
   .listing {
     display: flex;
     flex-direction: column;
     gap: 10px;
+  }
+
+  .listing img {
+    width: 300px;
+    height: 200px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-right: 15px;
+  }
+
+  .menuOption {
+    height: 15%;
+    border: none;
   }
 
 }

@@ -473,6 +473,12 @@ main p {
   display: block;
 }
 
+@media (max-width: 400px) {
+  .select {
+      width: 200px;
+  }
+}
+
 @media (max-width: 1200px) {
   body {
     height: 100vh;
@@ -496,5 +502,43 @@ main p {
   .menuOption {
     font-size: 14px;
     padding: 8px 12px;
+    display:flex;
+    flex-direction: column;
+    height: 40%;
+    
+    
   }
+
+  .menu li {
+    padding: auto;
+    margin: auto;
+    border-radius: 0.5em;
+    cursor: pointer;
+  }
+
+  .select {
+    display: flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    border: 2px var(--textDark) solid;
+    border-radius: 0.5em;
+    padding: 1em;
+    cursor: pointer;
+  }
+
+  
+}
+
+@media (max-width: 900px) {
+  .container {
+    max-width:auto;
+    margin: auto;
+    height: 70vh;
+  
+    border: 1px solid var(--textDark);
+    border-radius: 1em;
+    margin-bottom: 20px;
+    padding: min(1em, 15%);
+  }
+
 }

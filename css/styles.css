@@ -269,6 +269,11 @@ body.show::before {
   display: none;
 }
 
+.inputBox input {
+  cursor: pointer;
+}
+
+
 .bar {
   background: var(--white);
   height: 3px;
@@ -724,6 +729,16 @@ header::after {
     padding: 0;
     padding-bottom: 10px;
   }
+
+  .loginButton {
+    border: none;
+    font-size: 1rem;
+    white-space: nowrap;
+    color: var(--white);
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: none;
+    }
 
   .nav-links a {
     color: var(--white);

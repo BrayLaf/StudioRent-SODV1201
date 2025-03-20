@@ -24,7 +24,7 @@
           <span class="bar"></span>
         </div>
         <ul class="nav-links">
-          <li><a href="/html/index.html" class="home">Home</a></li>
+          <li><a href="index.html" class="home">Home</a></li>
           <li class="dropdown">
             <a href="#">My Account ▾</a>
             <ul class="dropdown-menu">
@@ -47,14 +47,14 @@
     <div class="loginContainer">
       <i class="ri-close-line formClose"></i>
       <div class="form loginForm">
-        <form action="#">
+        <form class="loginForm">
           <h2>Login</h2>
           <div class="inputBox">
-            <input type="email" placeholder="Enter your email" />
+            <input name="email" type="email" placeholder="Enter your email" />
             <i class="ri-mail-line email"></i>
           </div>
 
-          <button class="buttonLogin">Login Now</button>
+          <input type="submit" value="Login Now" class="buttonLogin" />
 
           <div class="loginSignUp">
             Create a new account? <a href="#" id="signUp">Signup</a>
@@ -63,24 +63,34 @@
       </div>
 
       <div class="form signUpForm">
-        <form action="#">
+        <form class="signUpForm">
           <h2>Signup</h2>
           <div class="inputBox">
-            <input type="email" placeholder="Create your email" />
+            <input name="email" type="email" placeholder="Create your email" />
             <i class="ri-mail-line email"></i>
           </div>
 
           <div class="inputBox">
-            <input type="email" placeholder="Enter your name" />
+            <input name="name" type="text" placeholder="Enter your name" />
             <i class="ri-account-box-line email"></i>
           </div>
 
           <div class="inputBox">
-            <input type="email" placeholder="Enter your phone number" />
+            <input
+              name="number"
+              type="text"
+              placeholder="Enter your phone number"
+            />
             <i class="ri-phone-line email"></i>
           </div>
+          <div class="inputBox radio">
+            <label for="ownerRad" class="rentownLab email">Owner</label>
+            <input type="radio" name="ownrent" id="ownerRad" class="rentownRadio">
+            <label for="renterRad" class="rentownLab email">Renter</label>
+            <input type="radio" name="ownrent" id="renterRad" class="rentownRadio">
+          </div>
 
-          <button class="buttonLogin">Signup Now</button>
+          <input type="submit" class="buttonLogin" value="Signup Now" />
 
           <div class="loginSignUp">
             Already have an account? <a href="#" id="login">Login</a>
@@ -99,17 +109,18 @@
       </aside>
 
       <main class="editing">
-        <h2 id="keyInfo">Rental Type</h2>
-        <div class="btnDiv">
-          <button class="editbtn">Multi Day</button>
-          <button class="editbtn">Single Day</button>
-        </div>
+       
         <h2>Studio Type</h2>
         <div class="btnDiv">
           <button class="editbtn">Recording</button>
           <button class="editbtn">Photography</button>
           <button class="editbtn">Film</button>
           <button class="editbtn">Podcast</button>
+        </div>
+        <h2 id="keyInfo">Accessible by Transportation</h2>
+        <div class="btnDiv">
+          <button class="editbtn">Yes</button>
+          <button class="editbtn">No</button>
         </div>
         <h2>Subtype</h2>
         <div class="btnDiv">
@@ -130,7 +141,7 @@
           <button class="editbtn">Tripods</button>
           <button class="editbtn">Green Screen</button>
           <button class="editbtn">Mixers</button>
-          <button class="editbtn">Speakrs</button>
+          <button class="editbtn">Speakers</button>
           <button class="editbtn">With Wifi</button>
           <button class="editbtn">Backdrops & Stands</button>
           <button class="editbtn">3D Printers</button>
@@ -158,12 +169,12 @@
         <h3 class="propertyTitle">Property Address</h3>
         <input
           class="desc"
-          placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit Max (200 char). " maxlength="200"
         />
         <h3>Description</h3>
         <textarea
           class="desc"
-          placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Max (500 char)"
           maxlength="500"
         ></textarea>
         <div id="form-container">

@@ -202,6 +202,20 @@ body.show::before {
   margin-top: 30px;
   height: 40px;
 }
+.radio{
+  display: flex;
+}
+.rentownRadio{
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Chrome, Safari, Opera */
+  transform: scale(.5);
+}
+.rentownLab{
+  font-size: small;
+  align-self: center;
+  justify-self: center;
+  padding-left: 20px;
+}
 
 .inputBox input {
   height: 100%;
@@ -253,6 +267,11 @@ body.show::before {
 .signUpForm {
   display: none;
 }
+
+.inputBox input {
+  cursor: pointer;
+}
+
 
 .bar {
   background: var(--white);
@@ -702,4 +721,106 @@ padding: 20px;
   .sidebar .price-range {
     flex-direction: column;
   }
+}
+
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: var(--primaryColor3);
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    padding: 0;
+    padding-bottom: 10px;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .headerContainer {
+    flex-direction: column;
+    padding: 30px;
+  }
+
+  .headerContent {
+    top: 40%;
+    margin-top: 20%;
+
+  }
+
+  .editing {
+    width: 90%;
+   
+  }
+
+  .headerContent h1 {
+    font-size: 2.5rem; /* Adjust h1 size */
+  }
+
+  .headerContent p {
+    font-size: 1.1rem;
+  }
+
+  .loginButton {
+    border: none;
+    font-size: 1rem;
+    white-space: nowrap;
+    color: var(--white);
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: none;
+    }
+
+  .nav-links a {
+    color: var(--white);
+  }
+
+  .navbar {
+    background-color: var(--primaryColor3);
+  }
+
+  .logo {
+    color: var(--white);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .dropdown-menu {
+    position: relative;
+    background: var(--primaryColor2);
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    opacity: 1;
+    transform: translateY(0);
+    border-radius: 0;
+  }
+
+  .dropdown-menu li a {
+    color: var(--textDark);
+    padding: 12px;
+    display: block;
+    border-bottom: 1px solid var(--primaryColor3);
+  }
+
+  .dropdown-menu li:last-child a {
+    border-bottom: none;
+  }
+}
+
+@media screen and (max-width: 499px) {
+  .headerContent {
+    top: 50%;
+  }
+  
 }

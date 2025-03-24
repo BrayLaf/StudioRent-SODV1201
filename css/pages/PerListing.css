@@ -369,11 +369,11 @@ border: none;
 font-size: 1rem;
 }
 
-.studioContainer {
+/* .studioContainer {
   width: 100vw;
   height: 100vh;
   justify-content: center;
-}
+} */
 
 .titleImage {
   max-width: 1200px;

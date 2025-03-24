@@ -112,6 +112,7 @@ nav {
   color: var(--white);
 }
 
+
 .dropdown.open .dropdown-menu {
   display: block;
   opacity: 1;

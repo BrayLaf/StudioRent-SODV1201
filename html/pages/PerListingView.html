@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Editing Listing</title>
+    <link rel="stylesheet" href="/css/pages/PerListingView.css" />
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/scripts.js"></script>
+    <script src="/js/general.js"></script>
+    <script src="/js/pages/EditListing.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">ArtistSpaces</div>
+        <div class="menu-toggle" id="mobile-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="/html/index.html" class="home">Home</a></li>
+          <li class="dropdown">
+            <a href="#">My Account ▾</a>
+            <ul class="dropdown-menu">
+              <li><a href="/html/pages/Account.html">My Profile</a></li>
+              <li><a href="" class="logout" >Logout</a></li>
+            </ul>
+          </li>
+          <li><a class="loginButton" id="formOpen">Login</a></li>
+        </ul>
+      </nav>
+
+      <div class="sectionContainer headerContainer">
+        <div class="headerContent">
+          <h1>Edit Listings</h1>
+          <h4>Start editing your listings!</h4>
+        </div>
+      </div>
+    </header>
+
+    <div class="loginContainer">
+      <i class="ri-close-line formClose"></i>
+      <div class="form loginForm">
+        <form class="loginForm">
+          <h2>Login</h2>
+          <div class="inputBox">
+            <input name="email" type="email" placeholder="Enter your email" />
+            <i class="ri-mail-line email"></i>
+          </div>
+
+          <input type="submit" value="Login Now" class="buttonLogin" />
+
+          <div class="loginSignUp">
+            Create a new account? <a href="#" id="signUp">Signup</a>
+          </div>
+        </form>
+      </div>
+
+      <div class="form signUpForm">
+        <form class="signUpForm">
+          <h2>Signup</h2>
+          <div class="inputBox">
+            <input name="email" type="email" placeholder="Create your email" />
+            <i class="ri-mail-line email"></i>
+          </div>
+
+          <div class="inputBox">
+            <input name="name" type="text" placeholder="Enter your name" />
+            <i class="ri-account-box-line email"></i>
+          </div>
+
+          <div class="inputBox">
+            <input
+              name="number"
+              type="text"
+              placeholder="Enter your phone number"
+            />
+            <i class="ri-phone-line email"></i>
+          </div>
+          <div class="inputBox radio">
+            <label for="ownerRad" class="rentownLab email">Owner</label>
+            <input type="radio" name="ownrent" id="ownerRad" class="rentownRadio">
+            <label for="renterRad" class="rentownLab email">Renter</label>
+            <input type="radio" name="ownrent" id="renterRad" class="rentownRadio">
+          </div>
+
+          <input type="submit" class="buttonLogin" value="Signup Now" />
+
+          <div class="loginSignUp">
+            Already have an account? <a href="#" id="login">Login</a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+    <div class="perListingContainer">
+
+        <div class="titleImage">
+            <div class="listingTitle"><h1>Listing Title</h1></div>
+            <div class="imageContainer">
+                <div class="image-container" style="grid-area: img-1">
+                    <img
+                      src="/assets-images/studio 1/echowave 5.jpeg"
+                      alt="Studio 1"
+                    />
+                  </div>
+                  <div class="image-container" style="grid-area: img-2">
+                    <img
+                      src="/assets-images/studio 1/Echowave 2.jpg"
+                      alt="Studio 1"
+                    />
+                  </div>
+                  <div class="image-container" style="grid-area: img-3">
+                    <img
+                      src="/assets-images/studio 1/Echowave 3.jpeg"
+                      alt="Studio 1"
+                    />
+                  </div>
+                  <div class="image-container" style="grid-area: img-4">
+                    <img
+                      src="/assets-images/studio 1/echowave 4.jpeg"
+                      alt="Studio 1"
+                    />
+                  </div>
+                  <div class="image-container mainImage" style="grid-area: img-5">
+                    <img
+                      src="/assets-images/studio 1/Echowave 1.jpeg"
+                      alt="Studio 1"
+                    />
+                  </div>
+            </div>
+        </div>
+
+        </div>
+
+
+</body>
+</html>

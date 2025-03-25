@@ -471,6 +471,10 @@ margin: auto;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  position: -webkit-sticky;
+  top: 20%;
+  z-index: 10;
 
 }
 
@@ -511,7 +515,7 @@ margin: auto;
     transition: scale 0.4s ease-in-out; 
 }
 
-/* 
+
 .list-info {
   display: flex;
   align-items: center;
@@ -631,7 +635,6 @@ aside {
   font-size: larger;
 }
 
-
  
 
 
@@ -721,6 +724,192 @@ aside {
   color: var(--primaryColor2);
 }
 
+
+
+@media screen and (max-width: 900px) {
+  .sectionContainer {
+    padding: 3rem 1rem;
+  }
+
+  .sectionHeader {
+    font-size: 2rem;
+  }
+
+  .perListingContainer {
+    width: 100%;
+    padding: 0;
+    gap: 20px;
+  }
+
+  .listingDesc {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .listingDetails, .listingContact {
+    flex: 1;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .listingContact {
+    position: relative;
+    top: auto;
+  }
+
+  .media-scroller {
+    grid-template-columns: 1fr 1fr;
+    padding: 0 1rem;
+  }
+
+  .image-container {
+    width: 100%;
+    height: auto;
+  }
+
+  .mainImage {
+    width: 100%;
+    height: auto;
+  }
+
+  .headerContainer {
+    grid-template-columns: 1fr;
+    padding: 2rem 1rem;
+  }
+
+  .headerContent h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .headerContent p {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .imageContainer {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    width: 100%;
+  }
+
+  .about {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .list-info {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .list-info .about, .list-info .owner {
+    width: 100%;
+  }
+
+  .media-scroller {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .perListingContainer h1 {
+    font-size: 1.6em;
+  }
+
+  .listingPrice {
+    font-size: 1rem;
+  }
+
+  .listingDetails {
+    padding: 15px;
+  }
+
+  .listingDetails,
+  .listingContact {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+
+  .listingContact {
+    position: relative;
+  }
+
+  .contactBtn,
+  .btn {
+    padding: 0.8rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .media-scroller {
+    grid-template-columns: 1fr;
+  }
+
+  .headerContent h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .headerContent p {
+    font-size: 1rem;
+  }
+
+  .image-container {
+    width: 100%;
+    height: auto;
+  }
+
+  .imageContainer {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 499px) {
+  .headerContent h1 {
+    font-size: 1.8rem;
+  }
+
+  .headerContent p {
+    font-size: 1rem;
+  }
+
+  .sectionHeader {
+    font-size: 1.5rem;
+  }
+
+  .footer {
+    padding: 20px;
+  }
+
+  .footer-container {
+    padding: 10px;
+  }
+
+  .btn,
+  .contactBtn {
+    font-size: 0.9rem;
+  }
+
+  .listingContact h3 {
+    font-size: 1.2rem;
+  }
+
+  .perListingContainer h1 {
+    font-size: 1.4em;
+  }
+
+  .listingPrice h3 {
+    font-size: 1rem;
+  }
+}
 
 
 @media (max-width: 768px) {

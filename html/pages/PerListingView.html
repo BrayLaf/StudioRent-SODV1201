@@ -30,7 +30,7 @@
             <a href="#">My Account ▾</a>
             <ul class="dropdown-menu">
               <li><a href="/html/pages/Account.html">My Profile</a></li>
-              <li><a href="" class="logout" >Logout</a></li>
+              <li><a href="" class="logout">Logout</a></li>
             </ul>
           </li>
           <li><a class="loginButton" id="formOpen">Login</a></li>
@@ -39,8 +39,6 @@
 
       <div class="sectionContainer headerContainer">
         <div class="headerContent">
-          <h1>Edit Listings</h1>
-          <h4>Start editing your listings!</h4>
         </div>
       </div>
     </header>
@@ -86,9 +84,19 @@
           </div>
           <div class="inputBox radio">
             <label for="ownerRad" class="rentownLab email">Owner</label>
-            <input type="radio" name="ownrent" id="ownerRad" class="rentownRadio">
+            <input
+              type="radio"
+              name="ownrent"
+              id="ownerRad"
+              class="rentownRadio"
+            />
             <label for="renterRad" class="rentownLab email">Renter</label>
-            <input type="radio" name="ownrent" id="renterRad" class="rentownRadio">
+            <input
+              type="radio"
+              name="ownrent"
+              id="renterRad"
+              class="rentownRadio"
+            />
           </div>
 
           <input type="submit" class="buttonLogin" value="Signup Now" />
@@ -100,47 +108,155 @@
       </div>
     </div>
 
-
     <div class="perListingContainer">
+      <div class="titleImage">
+        <div class="listingTitle"><h1>Listing Title</h1></div>
+        <div class="imageContainer">
+          <div class="image-container" style="grid-area: img-1">
+            <img src="/assets-images/studio 1/echowave 5.jpeg" alt="Studio 1" />
+          </div>
+          <div class="image-container" style="grid-area: img-2">
+            <img src="/assets-images/studio 1/Echowave 2.jpg" alt="Studio 1" />
+          </div>
+          <div class="image-container" style="grid-area: img-3">
+            <img src="/assets-images/studio 1/Echowave 3.jpeg" alt="Studio 1" />
+          </div>
+          <div class="image-container" style="grid-area: img-4">
+            <img src="/assets-images/studio 1/echowave 4.jpeg" alt="Studio 1" />
+          </div>
+          <div class="image-container mainImage" style="grid-area: img-5">
+            <img src="/assets-images/studio 1/Echowave 1.jpeg" alt="Studio 1" />
+          </div>
+        </div>
+      </div>
 
-        <div class="titleImage">
-            <div class="listingTitle"><h1>Listing Title</h1></div>
-            <div class="imageContainer">
-                <div class="image-container" style="grid-area: img-1">
-                    <img
-                      src="/assets-images/studio 1/echowave 5.jpeg"
-                      alt="Studio 1"
-                    />
-                  </div>
-                  <div class="image-container" style="grid-area: img-2">
-                    <img
-                      src="/assets-images/studio 1/Echowave 2.jpg"
-                      alt="Studio 1"
-                    />
-                  </div>
-                  <div class="image-container" style="grid-area: img-3">
-                    <img
-                      src="/assets-images/studio 1/Echowave 3.jpeg"
-                      alt="Studio 1"
-                    />
-                  </div>
-                  <div class="image-container" style="grid-area: img-4">
-                    <img
-                      src="/assets-images/studio 1/echowave 4.jpeg"
-                      alt="Studio 1"
-                    />
-                  </div>
-                  <div class="image-container mainImage" style="grid-area: img-5">
-                    <img
-                      src="/assets-images/studio 1/Echowave 1.jpeg"
-                      alt="Studio 1"
-                    />
-                  </div>
+      <div class="listingDesc">
+        <div class="listingDetails">
+          <div class="listingPrice">
+            <h2><strong>Price:</strong></h2>
+            <h3><strong>$1500/month</strong></h3>
+          </div>
+          <p>
+            This modern loft studio is designed for professionals and creatives
+            who require a highly functional, adaptable workspace within their
+            living environment. Featuring an open-concept layout, the studio
+            offers a seamless integration of work and relaxation areas. The
+            built-in workstation is equipped with ample desk space, integrated
+            lighting, and high-speed internet connectivity to support remote
+            work, virtual meetings, or creative projects. Acoustically treated
+            walls ensure a quiet atmosphere, making it suitable for video
+            editing, voice-over recording, or online collaborations. The studio
+            also includes climate control for year-round comfort,
+            high-efficiency LED lighting to reduce eye strain during long work
+            hours, and ample storage solutions to keep the workspace organized.
+            With professional-grade electrical outlets designed to handle
+            multiple high-powered devices, this studio is ideal for freelancers,
+            content creators, and business professionals who need a productive
+            and private environment.
+          </p>
+        </div>
+
+        <div class="listingContact">
+          <div class="listingOwner">
+            <h2>Contact Owner:</h2>
+            <div class="ownerInfo">
+              <p><strong>Name:</strong> Random Person</p>
+              <p><strong>Email:</strong> random@person.com</p>
+              <p><strong>Phone:</strong> (123) 456-7890</p>
+
+              <button class="contactBtn">Contact Owner</button>
             </div>
+          </div>
         </div>
+      </div>
+    </div>
 
+
+      <h2 class="section-title">Other Listings</h2>
+
+      <div class="media-scroller snaps-inline">
+        <div class="media-element">
+          <div class="card otherList">
+            <img src="/assets-images/studio 1/Echowave 1.jpeg">
+            <div class="about">
+              <h3 class="listTitle">$800/month</h3>
+              <h4 class="listTitle">Ecowave Studio</h4>
+              <p class="p2">  A professional recording space with state-of-the-art soundproofing, a vocal booth, and high-end equipment. Includes Pro Tools, MIDI controllers, and a selection of premium microphones.</p>
+                <p class="rating">&#9733;&#9733;&#9733;&#9734;&#9734;</p>
+            </div>
+          </div>
         </div>
+        <div class="media-element">
+          <div class="card otherList">
+            <img src="/assets-images/Studio 1/white castle img 1.jpg">
+            <div class="about">
+              <h3 class="listTitle">$1000/month</h3>
+              <h4 class="listTitle">White Castle Studio</h4>
+              <p class="p2">  A big hall like studio ready for creative people to come and explore this site located near the Downtown. This studio is more like a blank canvas but with great lightings and equipment for all the  big photoshoots.</p>
+                <p class="rating">&#9733;&#9733;&#9733;&#9734;&#9734;</p>
+            </div>
+          </div>
+        </div>
+        <div class="media-element">
+          <div class="card otherList">
+            <img src="/assets-images/studio 1/acharki studio 1.jpg ">
+            <div class="about">
+              <h3 class="listTitle">$1200/month</h3>
+              <h4 class="listTitle">Acharki studio</h4>
+              <p class="p2"> This studio is more about giving dark powerful vibes which is good for 3 to 4 people working at this studio . This studio contains more of a retro vibe too when you look up to some things which work as a prop including all the working cameras and lights .</p>
+                <p class="rating">&#9733;&#9733;&#9733;&#9734;&#9734;</p>
+            </div>
+          </div>
+        </div>
+        <div class="media-element">
+          <div class="card otherList">
+            <img src="/assets-images/studio 2/exterior2.1.jpg">
+            <div class="about">
+              <h3 class="listTitle">$XX,XXX</h3>
+              <h4 class="listTitle">Listing Title</h4>
+              <p class="p2"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac mauris consequat, euismod
+                lacus non, pretium augue. Nulla facilisi. Aliquam rhoncus pharetra nisi vel tincidunt.</p>
+                <p class="rating">&#9733;&#9733;&#9733;&#9734;&#9734;</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-
-</body>
+      <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-section footer-logo">
+            <a href="#">ArtistSpaces</a>
+          </div>
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="/html/index.html">Home</a></li>
+              <li><a href="#">Browse Studios</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Contact Us</h4>
+            <p>Email: info@artistspaces.com</p>
+            <p>Phone: +1 800 123 4547</p>
+            <p>Address: 123 Creative Blvd, Art City</p>
+          </div>
+          <div class="footer-section footer-socials">
+            <h4>Follow Us</h4>
+            <div class="social-icons">
+              <a href="#"><i class="ri-facebook-circle-line"></i></a>
+              <a href="#"><i class="ri-twitter-line"></i></a>
+              <a href="#"><i class="ri-instagram-line"></i></a>
+              <a href="#"><i class="ri-linkedin-box-line"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 ArtistSpaces. All Rights Reserved.</p>
+          <p>Designed with passion by the ArtistSpaces Team.</p>
+        </div>
+      </footer>
+      
+  </body>
 </html>

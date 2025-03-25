@@ -19,6 +19,7 @@
 
 body {
   font-family: "Montserrat", serif;
+  background-color: ghostwhite;
 }
 
 .navbar {
@@ -401,7 +402,7 @@ header {
 .sidebar {
   width: 30%;
   height: 100%;
-  background: #ffffff;
+  background: whitesmoke;
   padding: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
@@ -503,7 +504,7 @@ button.selected {
   margin: 0 auto;
   padding: 0 8px;
 
-  background: #ffffff;
+  background: whitesmoke;
 padding: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;

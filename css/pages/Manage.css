@@ -163,6 +163,7 @@ main p {
   border-radius: 1em;
   margin-bottom: 20px;
   padding: min(3em, 15%);
+  padding-bottom: 4em;
 
   h2,
   p {

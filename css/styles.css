@@ -725,6 +725,7 @@ header::after {
 
   .nav-links.active {
     display: flex;
+    justify-content:space-between;
   }
 
   .menu-toggle {

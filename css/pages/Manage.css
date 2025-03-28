@@ -152,16 +152,18 @@ main p {
 .menuOption {
   height: 30vh;
   display: grid;
-  grid-template-rows: 100px 100px;
+  grid-template-rows: 100px 100px 100px;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas:
     "title block block"
-    "filter1 filter2 filter3";
+    "filter1 filter2 filter3"
+    "add none none";
 
   border: 1px solid var(--textDark);
   border-radius: 1em;
   margin-bottom: 20px;
   padding: min(3em, 15%);
+  padding-bottom: 4em;
 
   h2,
   p {
@@ -183,6 +185,10 @@ main p {
 
 .item3 {
   grid-area: filter3;
+}
+
+.addButton {
+  grid-area: add;
 }
 
 .menuOption .title {
@@ -324,6 +330,7 @@ main p {
     position: fixed;
     top: unset;
     bottom: 0;
+    z-index: 101;
 
     > ul {
       padding: 0;
@@ -356,7 +363,7 @@ main p {
 .container {
   max-width: 1200px;
   margin: auto;
-  height: 70vh;
+  height: auto;
 
   border: 1px solid var(--textDark);
   border-radius: 1em;
@@ -473,6 +480,49 @@ main p {
   display: block;
 }
 
+main .addButton input {
+  height: 50%;
+  width: 50%;
+  padding: 10px;
+  margin-top: 10px;
+  outline: none;
+  color: var(--white);
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border-radius: 1px;
+  background: var(--primaryColor3);
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  border-radius: 6px; 
+
+}
+
+main .addButton input:hover {
+  background-color: #2d4d2e;
+  color: var(--white);
+  box-shadow: var(--primaryColor3);
+  transition: 0.3s;
+  scale: 1.1;
+  transition: scale 0.4s ease-in-out;
+}
+
+@media (max-width: 400px) {
+  .select {
+      width: 200px;
+  }
+  
+  .menuOption {
+    font-size: 14px;
+    display:flex;
+    flex-direction: column;
+    height: 20%;
+    
+    
+  }
+}
+
 @media (max-width: 1200px) {
   body {
     height: 100vh;
@@ -486,6 +536,13 @@ main p {
     overflow-y: auto;
   }
 
+  main .addButton input {
+width: 150px;
+height: 50px;  
+  
+  }
+  
+
   .listing-container {
     display: flex;
     flex-direction: column;
@@ -496,5 +553,75 @@ main p {
   .menuOption {
     font-size: 14px;
     padding: 8px 12px;
+    display:flex;
+    flex-direction: column;
+    height: 35%;
+    
+    
   }
+
+  .menu li {
+    padding: auto;
+    margin: auto;
+    border-radius: 0.5em;
+    cursor: pointer;
+  }
+
+  .select {
+    display: flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    border: 2px var(--textDark) solid;
+    border-radius: 0.5em;
+    padding: 1em;
+    cursor: pointer;
+  }
+  .container {
+    margin: .5em;
+    margin-bottom: 5em;
+  }
+  
+}
+
+@media (max-width: 790px) {
+.menuOption {
+  font-size: 14px;
+  padding: 8px 12px;
+  display:flex;
+  flex-direction: column;
+  height: 25%;
+}
+}
+  
+
+@media (max-width: 900px) {
+  .container {
+    max-width:auto;
+    height: auto;
+    padding: 3em 1em;
+  
+    border: 1px solid var(--textDark);
+    border-radius: 1em;
+    margin: .5em;
+  }
+
+  .listing {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .listing img {
+    width: 300px;
+    height: 200px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-right: 15px;
+  }
+
+  .menuOption {
+    height: 20%;
+    border: none;
+  }
+
 }

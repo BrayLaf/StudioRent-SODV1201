@@ -54,14 +54,14 @@
     <div class="loginContainer">
       <i class="ri-close-line formClose"></i>
       <div class="form loginForm">
-        <form action="#">
+        <form class="loginForm">
           <h2>Login</h2>
           <div class="inputBox">
-            <input type="email" placeholder="Enter your email" />
+            <input name="email" type="email" placeholder="Enter your email" />
             <i class="ri-mail-line email"></i>
           </div>
 
-          <button class="buttonLogin">Login Now</button>
+          <input type="submit" value="Login Now" class="buttonLogin" />
 
           <div class="loginSignUp">
             Create a new account? <a href="#" id="signUp">Signup</a>
@@ -70,24 +70,34 @@
       </div>
 
       <div class="form signUpForm">
-        <form action="#">
+        <form class="signUpForm">
           <h2>Signup</h2>
           <div class="inputBox">
-            <input type="email" placeholder="Create your email" />
+            <input name="email" type="email" placeholder="Create your email" />
             <i class="ri-mail-line email"></i>
           </div>
 
           <div class="inputBox">
-            <input type="email" placeholder="Enter your name" />
+            <input name="name" type="text" placeholder="Enter your name" />
             <i class="ri-account-box-line email"></i>
           </div>
 
           <div class="inputBox">
-            <input type="email" placeholder="Enter your phone number" />
+            <input
+              name="number"
+              type="text"
+              placeholder="Enter your phone number"
+            />
             <i class="ri-phone-line email"></i>
           </div>
+          <div class="inputBox radio">
+            <label for="ownerRad" class="rentownLab email">Owner</label>
+            <input type="radio" name="ownrent" id="ownerRad" class="rentownRadio">
+            <label for="renterRad" class="rentownLab email">Renter</label>
+            <input type="radio" name="ownrent" id="renterRad" class="rentownRadio">
+          </div>
 
-          <button class="buttonLogin">Signup Now</button>
+          <input type="submit" class="buttonLogin" value="Signup Now" />
 
           <div class="loginSignUp">
             Already have an account? <a href="#" id="login">Login</a>

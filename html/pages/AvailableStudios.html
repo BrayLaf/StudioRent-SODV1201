@@ -110,34 +110,61 @@
       <aside class="sidebar filter">
         <h2>Filter</h2>
         <form>
-          <label for="location">Location</label>
-          <select id="location" name="location">
+
+          <label for="studioType">Studio Type</label>
+          <select id="studioType" name="studioType">
+            <option value="studioType">Select a Studio Type</option>
+
             <option value="all">All</option>
-            <option value="city1">City 1</option>
-            <option value="city2">City 2</option>
+            <option value="type1">Photography</option>
+            <option value="type2">Recording</option>
+            <option value="type3">Film</option>
+            <option value="type4">Podcast</option>
+
           </select>
 
-          <label for="price">Price Range</label>
-          <input
-            type="number"
-            id="min-price"
-            name="min-price"
-            placeholder="Min"
-          />
-          <input
-            type="number"
-            id="max-price"
-            name="max-price"
-            placeholder="Max"
-          />
+          <label for="rentalTerm">Rental Term</label>
+          <select id="rentalTerm" name="rentalTerm">
+            <option value="rentalTerm">Select a Rental Term</option>
+            <option value="all">All</option>
+            <option value="term1">Hourly</option>
+            <option value="term2">Daily</option>
+            <option value="term3">Monthly</option>
+          </select>
 
-          <label for="size">Size (sq ft)</label>
+
+          <label for="peopleAllowed">Number of People Allowed</label>
+          <select id="peopleAllowed" name="rentalTerm">
+            <option value="peopleAllowed">Select how many are allowed</option>
+            <option value="all">All</option>
+            <option value="people1">10 - 20</option>
+            <option value="people2">21 - 30</option>
+            <option value="people3">31- 40</option>
+            <option value="people4">41+</option>
+
+          </select>
+
+
+          <label for="priceRange">Price Range (CAD)</label>
+          <select id="priceRange" name="priceRange">
+            <option value="priceRange">Select a Price Range</option>
+            <option value="all">All</option>
+            <option value="range1">$0 - $50</option>
+            <option value="range2">$51 - $100</option>
+            <option value="range3">$101 - $200</option>
+            <option value="range4">$201 - $500</option>
+            <option value="range5">$501 - $1000</option>
+            <option value="range6">$1001 - $2000</option>
+            <option value="range7">$2001 - $5000</option>
+            <option value="range8">$5001+</option>
+          </select>
+
+          <label for="size">Area (in square meters)</label>
           <input type="number" id="size" name="size" placeholder="Enter size" />
 
-          <label for="amenities">Amenities</label>
           <div class="checkbox-group">
-            <input type="checkbox" id="wifi" name="wifi">
-            <label for="wifi">Wi-Fi</label>
+            <input type="checkbox" id="transport" name="transport">
+            <label for="transport">Transport</label>
         
             <input type="checkbox" id="parking" name="parking">
             <label for="parking">Parking</label>

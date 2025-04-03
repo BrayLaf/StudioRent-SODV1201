@@ -474,6 +474,12 @@ header {
   margin-right: 8px;
 }
 
+.desc::placeholder {
+  font-family: "Montserrat", serif;
+  font-size: 14px;
+  font-weight:bold;
+}
+
 button {
   padding: 12px;
   background-color: #1b3d1c;

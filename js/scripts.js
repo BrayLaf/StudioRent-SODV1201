@@ -73,12 +73,25 @@ $(function () {
           e.preventDefault();
           const formData = new FormData(e.target);
           const data = Object.fromEntries(formData.entries());
-  
+        
           let newUser = new User(data.name, data.email, data.number);
           localStorage.setItem(newUser.email, JSON.stringify(newUser));
           //UserArray.push(newUser);
   
           console.log("New User Created:", newUser);
+
+
+          const request = JSON.stringify({
+            email: newUser.email,
+            name: newUser.name,
+            phonenumber: newUser.number
+          })
+
+          $.post("http://localhost:3000/users",
+          
+request
+          )
+          
   
           $(".signUpForm").hide();
           $(".loginForm").show();
@@ -104,6 +117,8 @@ $(function () {
               console.log("No such user exists!");
           }
       });
+
+
       //sample studio data - to be filled in future
         const studioData = {
           recording: [

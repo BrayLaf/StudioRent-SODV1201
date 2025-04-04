@@ -48,28 +48,34 @@ $(function () {
     },
     { passive: true }
   );
-});
 
-//function to make buttons selected when clicked
-document.addEventListener("DOMContentLoaded", function () {
+
+  //function to make buttons selected when clicked
   const btnDivs = document.querySelectorAll(".btnDiv");
 
-  btnDivs.forEach((btnDiv) => {
-    const buttons = btnDiv.querySelectorAll("button");
+    btnDivs.forEach((btnDiv) => {
+      const buttons = btnDiv.querySelectorAll("button");
 
-    if (btnDiv.classList.contains("multi-select")) {
-      buttons.forEach((button) => {
-        button.addEventListener("click", function () {
-          this.classList.toggle("selected"); // Allow multiple selections
+      if (btnDiv.classList.contains("multi-select")) {
+        buttons.forEach((button) => {
+          button.addEventListener("click", function () {
+            this.classList.toggle("selected"); // Allow multiple selections
+          });
         });
-      });
-    } else {
-      buttons.forEach((button) => {
-        button.addEventListener("click", function () {
-          buttons.forEach((btn) => btn.classList.remove("selected")); // Deselect others
-          this.classList.add("selected"); // Select only this button
+      } else {
+        buttons.forEach((button) => {
+          button.addEventListener("click", function () {
+            buttons.forEach((btn) => btn.classList.remove("selected")); // Deselect others
+            this.classList.add("selected"); // Select only this button
+          });
         });
-      });
-    }
-  });
+      }
+    });
+
+    
+
+    // collect data for updating listing
+
+
 });
+

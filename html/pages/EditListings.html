@@ -109,46 +109,43 @@
       <main class="editing">
         <h2>Studio Type</h2>
         <div class="btnDiv">
-          <button class="editbtn">Recording</button>
-          <button class="editbtn">Photography</button>
-          <button class="editbtn">Film</button>
-          <button class="editbtn">Podcast</button>
+          <button class="editbtn" name="StudioType" value="Recording">Recording</button>
+          <button class="editbtn" name="StudioType" value="Photography">Photography</button>
+          <button class="editbtn" name="StudioType" value="Film">Film</button>
+          <button class="editbtn" name="StudioType" value="Podcast">Podcast</button>
         </div>
 
         <h2 id="keyInfo">Rental Term</h2>
         <div class="btnDiv">
-          <button class="editbtn">Hourly</button>
-          <button class="editbtn">Daily</button>
-          <button class="editbtn">Monthly</button>
+          <button class="editbtn" name="rentalTerm" value="Hourly">Hourly</button>
+          <button class="editbtn" name="rentalTerm" value="Daily">Daily</button>
+          <button class="editbtn" name="rentalTerm" value="Monthly">Monthly</button>
 
         </div>
 
         <h2>The price per rental term</h2>
-        <input
-          class="desc"
-          placeholder="Enter the amount in $:"
-        />
+        <input class="desc" name="termPrice" placeholder="Enter the amount in $:" />
 
 
         <h2>Number of people it can accommodate</h2>
         <div class="btnDiv">
-          <button class="editbtn">10 to 20</button>
-          <button class="editbtn">25 to 35</button>
-          <button class="editbtn">35 to 40</button>
-          <button class="editbtn">40 or more</button>
+          <button class="editbtn" name="accommodation" value="10-20">10 to 20</button>
+          <button class="editbtn" name="accommodation" value="25-35">25 to 35</button>
+          <button class="editbtn" name="accommodation" value="35-40">35 to 40</button>
+          <button class="editbtn" name="accommodation" value="40+">40 or more</button>
         </div>
 
         <h2>Is it reachable by public transport?</h2>
         <div class="btnDiv">
-          <button class="editbtn">Yes</button>
-          <button class="editbtn">No</button>
+          <button class="editbtn" name="transportYN" value="Can be reached by public transport">Yes</button>
+          <button class="editbtn" name="transportYN" value="Cannot be reached by public transport">No</button>
         </div>
 
 
         <h2>Does it include Parking?</h2>
         <div class="btnDiv">
-          <button class="editbtn">Yes</button>
-          <button class="editbtn">No</button>
+          <button class="editbtn" name="parkingYN" value="Does include parking">Yes</button>
+          <button class="editbtn" name="parkingYN" value="Does not include parking">No</button>
         </div>
 
         <h2 id="imageUpload">Images</h2>
@@ -160,22 +157,17 @@
         </div>
 
         <h2>Studio Name</h2>
-        <input
-          class="desc"
-          placeholder="Enter the name of the studio:"
-        />
+        <input class="desc" name="studioName" placeholder="Enter the name of the studio:" />
 
         <h2>Area (in square meters)</h2>
-        <input
-          class="desc"
-          placeholder="Area of the studio:"
-        />
+        <input class="desc" name="StudioArea" placeholder="Area of the studio:"/>
 
         <h2 id="locadetails">Location & Details</h2>
         <h3 class="propertyTitle">Studio Address</h3>
         <input 
           class="desc" 
           id="studioAddress"
+          name="studioAddress"
           type="text" 
           placeholder="e.g. 345 - 6 Avenue SE, Calgary, AB T2G 4V1" 
           maxlength="200"
@@ -186,6 +178,7 @@
         <h3>Description</h3>
         <textarea
           class="desc"
+          name="StudioDesc"
           placeholder="Provide a detailed description of your studio: (max 500 words)"
           maxlength="500"
         ></textarea>

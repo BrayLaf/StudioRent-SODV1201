@@ -78,4 +78,14 @@ $(function () {
 
 
 });
+  // Limit image upload to 5 images
+  const imageUploadInput = document.querySelector("#imageUpload");
+
+  imageUploadInput.addEventListener("change", function () {
+    if (this.files.length > 5) {
+      alert("You can only upload up to 5 images.");
+      this.value = ""; 
+    }
+  });
+
 

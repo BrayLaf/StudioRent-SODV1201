@@ -42,12 +42,6 @@ router.put('/studio/:id', (req, res) => {
     // Logic to update a studio by id
 });
 
-// Delete studio
-router.delete('/studio/:id', (req, res) => {
-    // Logic to delete a studio by id
-});
-
-
 // --- User Routes ---
 
 // Create user
@@ -65,9 +59,6 @@ router.put('/user/:id', (req, res) => {
     // Logic to update a user by id
 });
 
-// Delete user
-router.delete('/user/:id', (req, res) => {
-    // Logic to delete a user by id
-});
+
 
 module.exports = router;

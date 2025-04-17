@@ -2,10 +2,7 @@
 const express = require('express');
 const api = require('./api.js');
 
-// Create an express app
 const app = express();
-
-// Set the port
 const PORT = 3000;
 
 // Middleware to parse the incoming request object as JSON

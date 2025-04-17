@@ -24,7 +24,26 @@ const readDataFromFile = () => {
 
 // Create studio
 router.post('/studio', (req, res) => {
+  try{
     // Logic to create a studio
+    const newStudio = req.body; // studio object that we get from the client
+    const backendData = readDataFromFile();
+
+    backendData.push(newStudio);
+    fs.writeFileSync(filePath, JSON.stringify(backendData, null, 2));
+
+    res.status(201).json({
+      success: true,
+      message: 'Studio creation successful',
+      data: newStudio
+    });
+  }catch(error){
+    console.error('error creating new studio:', error);
+    res.status(500).json({
+      success: false,
+      message: 'internal server error'
+    });
+  }
 });
 
 // Read all studios

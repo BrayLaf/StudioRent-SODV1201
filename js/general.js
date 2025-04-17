@@ -2,6 +2,8 @@ $(function () {
     $(document).ready(function () {
       let user = JSON.parse(localStorage.getItem("current user"));
   
+
+      // if there is a user hide login and show logout
       function updateLoginButton() {
         if (user) {
           $(".loginButton").text("Logout").addClass("logout").show();
@@ -53,6 +55,7 @@ $(function () {
         }
       });
   
+      // show/ hide login/signup
       $("#signUp").click(function () {
         $(".loginForm").hide();
         $(".signUpForm").show();

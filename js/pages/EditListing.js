@@ -3,7 +3,7 @@ $(function () {
     keyinfo: document.querySelector(".btnDiv"),
     imageUpload: document.querySelector("#imageUpload"),
     location: document.querySelector("#locadetails"),
-    contact: document.querySelector("#property-form"),
+    contact: document.querySelector("#form-container")
   };
 
   const sidebarLinks = {
@@ -51,41 +51,53 @@ $(function () {
 
 
   //function to make buttons selected when clicked
-  const btnDivs = document.querySelectorAll(".btnDiv");
-
-    btnDivs.forEach((btnDiv) => {
-      const buttons = btnDiv.querySelectorAll("button");
-
-      if (btnDiv.classList.contains("multi-select")) {
-        buttons.forEach((button) => {
-          button.addEventListener("click", function () {
-            this.classList.toggle("selected"); // Allow multiple selections
-          });
-        });
-      } else {
-        buttons.forEach((button) => {
-          button.addEventListener("click", function () {
-            buttons.forEach((btn) => btn.classList.remove("selected")); // Deselect others
-            this.classList.add("selected"); // Select only this button
-          });
-        });
+  function setupButtonGroup(buttonName, hiddenInputId) {
+    const buttons = $(`button[value][name='${buttonName}']`);
+    buttons.on("click", function () {
+      buttons.removeClass("selected");
+      $(this).addClass("selected");
+      $(`#${hiddenInputId}`).val($(this).val());
+    });
+  }
+  
+    setupButtonGroup("StudioType", "studioTypeInput");
+    setupButtonGroup("rentalTerm", "rentalTermInput");
+    setupButtonGroup("accommodation", "accommodationInput");
+    setupButtonGroup("transportYN", "transportInput");
+    setupButtonGroup("parkingYN", "parkingInput");
+    // collect data for updating listing
+    $("#property-form").submit(function (e) {
+      e.preventDefault();
+    
+      // check file input
+      const fileInput = $("#fileUpload")[0];
+      if (!fileInput.files.length) {
+        alert("Please upload at least one image.");
+        return;
+      }
+      const requiredHiddenInputs = ["studioTypeInput", "rentalTermInput", "accommodationInput", "transportInput", "parkingInput"];
+      for (const id of requiredHiddenInputs) {
+        if (!$(`#${id}`).val()) {
+          alert("Please make sure all required selections are made.");
+          return;
+        }
+      }
+      const formData = new FormData(this);
+      for (const [key, value] of formData.entries()) {
+        console.log(`${key}: ${value}`);
+      }
+      // Submit via AJAX or continue
+    });
+    
+    // Limit image upload to 5 images
+    const imageUploadInput = document.querySelector("#imageUpload");
+  
+    imageUploadInput.addEventListener("change", function () {
+      if (this.files.length > 5) {
+        alert("You can only upload up to 5 images.");
+        this.value = ""; 
       }
     });
-
-    
-
-    // collect data for updating listing
-
-
 });
-  // Limit image upload to 5 images
-  const imageUploadInput = document.querySelector("#imageUpload");
-
-  imageUploadInput.addEventListener("change", function () {
-    if (this.files.length > 5) {
-      alert("You can only upload up to 5 images.");
-      this.value = ""; 
-    }
-  });
 
 

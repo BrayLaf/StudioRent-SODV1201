@@ -100,59 +100,68 @@
     <div class="container">
       <aside class="sidebar filter">
         <h2>Sections</h2>
-        <a href="#keyInfo"><p class="sideKey1">Key Information</p></a>
+        <a href="#mainEditing"><p class="sideKey1">Key Information</p></a>
         <a href="#imageUpload"><p class="sideKey2">Photos & Media</p></a>
         <a href="#locadetails"><p class="sideKey3">Location & Details</p></a>
-        <a href="#property-form"><p class="sideKey4">Contact</p></a>
+        <a href="#form-container"><p class="sideKey4">Contact</p></a>
       </aside>
 
-      <main class="editing">
+      <main class="editing" id="mainEditing">
+        <form
+            class="contactDetails"
+            id="property-form"
+            action="#"
+            method="POST"
+          >
         <h2>Studio Type</h2>
+        <input type="hidden" name="StudioType" id="studioTypeInput" required />
         <div class="btnDiv">
-          <button class="editbtn" name="StudioType" value="Recording">Recording</button>
-          <button class="editbtn" name="StudioType" value="Photography">Photography</button>
-          <button class="editbtn" name="StudioType" value="Film">Film</button>
-          <button class="editbtn" name="StudioType" value="Podcast">Podcast</button>
+          <button type="button" class="editbtn" name="StudioType" value="Recording">Recording</button>
+          <button type="button" class="editbtn" name="StudioType" value="Photography">Photography</button>
+          <button type="button" class="editbtn" name="StudioType" value="Film">Film</button>
+          <button type="button" class="editbtn" name="StudioType" value="Podcast">Podcast</button>
         </div>
 
         <h2 id="keyInfo">Rental Term</h2>
+        <input type="hidden" name="rentalTerm" id="rentalTermInput" required />
         <div class="btnDiv">
-          <button class="editbtn" name="rentalTerm" value="Hourly">Hourly</button>
-          <button class="editbtn" name="rentalTerm" value="Daily">Daily</button>
-          <button class="editbtn" name="rentalTerm" value="Monthly">Monthly</button>
-
+          <button type="button" class="editbtn" name="rentalTerm" value="Hourly">Hourly</button>
+          <button type="button" class="editbtn" name="rentalTerm" value="Daily">Daily</button>
+          <button type="button" class="editbtn" name="rentalTerm" value="Monthly">Monthly</button>
         </div>
 
         <h2>The price per rental term</h2>
-        <input class="desc" name="termPrice" placeholder="Enter the amount in $:" />
+        <input class="desc" name="termPrice" placeholder="Enter the amount in $:" required/>
 
 
         <h2>Number of people it can accommodate</h2>
+        <input type="hidden" name="accommodation" id="accommodationInput" required />
         <div class="btnDiv">
-          <button class="editbtn" name="accommodation" value="10-20">10 to 20</button>
-          <button class="editbtn" name="accommodation" value="25-35">25 to 35</button>
-          <button class="editbtn" name="accommodation" value="35-40">35 to 40</button>
-          <button class="editbtn" name="accommodation" value="40+">40 or more</button>
+          <button type="button" class="editbtn" name="accommodation" value="10-20">10 to 20</button>
+          <button type="button" class="editbtn" name="accommodation" value="25-35">25 to 35</button>
+          <button type="button" class="editbtn" name="accommodation" value="35-40">35 to 40</button>
+          <button type="button" class="editbtn" name="accommodation" value="40+">40 or more</button>
         </div>
 
         <h2>Is it reachable by public transport?</h2>
+        <input type="hidden" name="transportYN" id="transportInput" required />
         <div class="btnDiv">
-          <button class="editbtn" name="transportYN" value="Can be reached by public transport">Yes</button>
-          <button class="editbtn" name="transportYN" value="Cannot be reached by public transport">No</button>
+          <button type="button" class="editbtn" name="transportYN" value="Yes">Yes</button>
+          <button type="button" class="editbtn" name="transportYN" value="No">No</button>
         </div>
 
 
         <h2>Does it include Parking?</h2>
+        <input type="hidden" name="parkingYN" id="parkingInput" required />
         <div class="btnDiv">
-          <button class="editbtn" name="parkingYN" value="Does include parking">Yes</button>
-          <button class="editbtn" name="parkingYN" value="Does not include parking">No</button>
+          <button type="button" class="editbtn" name="parkingYN" value="Yes">Yes</button>
+          <button type="button" class="editbtn" name="parkingYN" value="No">No</button>
         </div>
-
         <h2 id="imageUpload">Images</h2>
         <div class="imageUpload">
           <h2 class="postImages">Upload Images</h2>
           <label for="fileUpload" class="fileLabel">Choose Images</label>
-          <input class="desc fileInput" type="file" id="fileUpload" multiple />
+          <input class="desc fileInput" type="file" id="fileUpload" name="studioImages" multiple />
           <p class="uploadNote">You can upload only 5 images</p>
         </div>
 
@@ -173,8 +182,6 @@
           maxlength="200"
           required
         />
-        
-
         <h3>Description</h3>
         <textarea
           class="desc"
@@ -185,17 +192,11 @@
 
         <div id="form-container">
           <h2>Property Owner Contact Form</h2>
-          <form
-            class="contactDetails"
-            id="property-form"
-            action="#"
-            method="POST"
-          >
             <label for="email">Email:</label>
             <input class="desc" type="email" id="email" name="email" required />
             <label for="phone">Phone Number:</label>
             <input class="desc" type="tel" id="phone" name="phone" required />
-            <button class="editbtn2" type="submit">Submit</button>
+            <input id="editSubmit" class="editbtn2" type="submit">
           </form>
         </div>
       </main>

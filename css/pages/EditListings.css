@@ -604,7 +604,11 @@ padding: 20px;
 }
 
 .fileInput {
-  display: none;
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  z-index: -1;
 }
 
 .uploadNote {

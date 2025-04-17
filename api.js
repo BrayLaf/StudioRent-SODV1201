@@ -27,16 +27,21 @@ router.post('/studio', (req, res) => {
   try{
     // Logic to create a studio
     const newStudio = req.body; // studio object that we get from the client
+    // reads data from our json file(gets an array)
     const backendData = readDataFromFile();
 
+    //adds new data to array
     backendData.push(newStudio);
+    // converts into json and writes to the json file
     fs.writeFileSync(filePath, JSON.stringify(backendData, null, 2));
 
+    // sends success message
     res.status(201).json({
       success: true,
       message: 'Studio creation successful',
       data: newStudio
     });
+    // sends error message
   }catch(error){
     console.error('error creating new studio:', error);
     res.status(500).json({

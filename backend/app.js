@@ -1,6 +1,6 @@
 // Import modules
 const express = require('express');
-const api = require('./api.js');
+const api = require('./routes/api.js');
 
 const app = express();
 const PORT = 3000;

@@ -1,16 +1,16 @@
 {
-  "name": "studiorentbackend",
+  "name": "studiorent-sodv1201",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "backend/app.js",
   "scripts": {
-    "start": "npx json-server database.json",
+    "start": "nodemon backend/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "json-server": "^1.0.0-beta.3"
+    "express": "^5.1.0",
+    "nodemon": "^3.1.9"
   }
 }

@@ -5,84 +5,138 @@ const path = require('path');
 
 const router = express.Router();
 
+// Define file path
 const filePath = path.join(__dirname, 'backend', 'database.json');
 
+// Read data
 const readDataFromFile = () => {
-    try {
-      if (fs.existsSync(filePath)) {
-        const data = fs.readFileSync(filePath, 'utf8');
-        // If the file is empty, return an empty array
-        return data ? JSON.parse(data) : [];
-      } else {
-        return [];
-      }
-    } catch (error) {
-      console.error('Error reading file:', error);
+  try {
+    if (fs.existsSync(filePath)) {
+      const data = fs.readFileSync(filePath, 'utf8');
+      return data ? JSON.parse(data) : [];
+    } else {
       return [];
     }
-  };
+  } catch (error) {
+    console.error('Error reading file:', error);
+    return [];
+  }
+};
+
+// Write data
+const writeDataToFile = (data) => {
+  try {
+    fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
+  } catch (error) {
+    console.error('Error writing file:', error);
+  }
+};
+
+// --- Studio Routes ---
 
 // Create studio
 router.post('/studio', (req, res) => {
-  try{
-    // Logic to create a studio
-    const newStudio = req.body; // studio object that we get from the client
-    // reads data from our json file(gets an array)
-    const backendData = readDataFromFile();
-
-    //adds new data to array
-    backendData.push(newStudio);
-    // converts into json and writes to the json file
-    fs.writeFileSync(filePath, JSON.stringify(backendData, null, 2));
-
-    // sends success message
-    res.status(201).json({
-      success: true,
-      message: 'Studio creation successful',
-      data: newStudio
-    });
-    // sends error message
-  }catch(error){
-    console.error('error creating new studio:', error);
-    res.status(500).json({
-      success: false,
-      message: 'internal server error'
-    });
+  try {
+    const newStudio = { ...req.body, type: 'studio' };
+    const data = readDataFromFile();
+    data.push(newStudio);
+    writeDataToFile(data);
+    res.status(201).json({ success: true, message: 'Studio created', data: newStudio });
+  } catch (error) {
+    console.error('Error creating studio:', error);
+    res.status(500).json({ success: false, message: 'Internal server error' });
   }
 });
 
-// Read all studios
+// Get all studios
 router.get('/studios', (req, res) => {
-    // Logic to get all studios
+  try {
+    const data = readDataFromFile();
+    const studios = data.filter(item => item.type === 'studio');
+    res.json(studios);
+  } catch (error) {
+    res.status(500).json({ success: false, message: 'Internal server error' });
+  }
 });
 
-// Read one studio
+// Get studio by ID
 router.get('/studio/:id', (req, res) => {
-    // Logic to get a single studio by id
+  try {
+    const data = readDataFromFile();
+    const studio = data.find(item => item.type === 'studio' && item.id == req.params.id);
+    if (studio) {
+      res.json(studio);
+    } else {
+      res.status(404).json({ success: false, message: 'Studio not found' });
+    }
+  } catch (error) {
+    res.status(500).json({ success: false, message: 'Internal server error' });
+  }
 });
 
-// Update studio
+// Update studio by ID
 router.put('/studio/:id', (req, res) => {
-    // Logic to update a studio by id
+  try {
+    const data = readDataFromFile();
+    const index = data.findIndex(item => item.type === 'studio' && item.id == req.params.id);
+    if (index !== -1) {
+      data[index] = { ...data[index], ...req.body };
+      writeDataToFile(data);
+      res.json({ success: true, message: 'Studio updated', data: data[index] });
+    } else {
+      res.status(404).json({ success: false, message: 'Studio not found' });
+    }
+  } catch (error) {
+    res.status(500).json({ success: false, message: 'Internal server error' });
+  }
 });
 
 // --- User Routes ---
 
 // Create user
 router.post('/user', (req, res) => {
-    // Logic to create a user
+  try {
+    const newUser = { ...req.body, type: 'user' };
+    const data = readDataFromFile();
+    data.push(newUser);
+    writeDataToFile(data);
+    res.status(201).json({ success: true, message: 'User created', data: newUser });
+  } catch (error) {
+    console.error('Error creating user:', error);
+    res.status(500).json({ success: false, message: 'Internal server error' });
+  }
 });
 
-// Read user
+// Get user by ID
 router.get('/user/:id', (req, res) => {
-    // Logic to get a user by id
+  try {
+    const data = readDataFromFile();
+    const user = data.find(item => item.type === 'user' && item.id == req.params.id);
+    if (user) {
+      res.json(user);
+    } else {
+      res.status(404).json({ success: false, message: 'User not found' });
+    }
+  } catch (error) {
+    res.status(500).json({ success: false, message: 'Internal server error' });
+  }
 });
 
-// Update user
+// Update user by ID
 router.put('/user/:id', (req, res) => {
-    // Logic to update a user by id
+  try {
+    const data = readDataFromFile();
+    const index = data.findIndex(item => item.type === 'user' && item.id == req.params.id);
+    if (index !== -1) {
+      data[index] = { ...data[index], ...req.body };
+      writeDataToFile(data);
+      res.json({ success: true, message: 'User updated', data: data[index] });
+    } else {
+      res.status(404).json({ success: false, message: 'User not found' });
+    }
+  } catch (error) {
+    res.status(500).json({ success: false, message: 'Internal server error' });
+  }
 });
-
-
 
 module.exports = router;

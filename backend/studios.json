@@ -1,0 +1,18 @@
+{
+    "studios": [
+        {
+            "ownerId": "1",
+            "id": "1",
+            "type": "",
+            "term": "",
+            "price": "",
+            "accommodation": "",
+            "reachable": "",
+            "parking": "",
+            "studioname": "",
+            "area": "",
+            "address": "",
+            "description": ""
+        }
+    ]
+}

@@ -20,6 +20,7 @@ $(function () {
           localStorage.removeItem("current user");
           user = null;
           updateLoginButton();
+          
           return; // exit early to avoid triggering login popup
         }
   
@@ -90,11 +91,40 @@ $(function () {
           name: newUser.name,
           phonenumber: newUser.number,
         });
+        //Fetching the Signup Command
+        fetch("http://localhost:3000/users",{
+            method: "POST",
+            headers:{
+                "Content-Type":"application/json",
+            },
+
+            body: JSON.stringify({
+                email: newUser.email,
+                name: newUser.name,
+                phonenumber: newUser.number,
+            }),
+        })
+        .then(response => response.ok? response.json():Promise.reject('Failed'))
+        .then(data => console.log("User save:", data))
+        .catch(error => console.error("Error: ",error));
+  
   
         // $.post("http://localhost:3000/users", request)
   
         $(".signUpForm").hide();
         $(".loginForm").show();
+      });
+      $(document).ready(function(){
+       $.ajax({
+        url: 'http://localhost:3000/users',
+        method:'GET',
+        success: function(data){
+            console.log("User Data:",data);
+        },
+        error: function(err){
+            console.error("Error getting users:", err);
+        }
+       })
       });
   
       // Navigation and dropdown functionality
@@ -136,4 +166,3 @@ $(function () {
       $("body").append(overlay);
     });
   });
-  

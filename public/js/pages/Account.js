@@ -27,12 +27,19 @@ document.addEventListener("DOMContentLoaded", () => {
       $(".loggedinName").val(user.name);
       $(".loggedinEmail").val(user.email);
       $(".loggedinPhone").val(user.number);
+    
       if (user.ownrent === "owner") {
         $("#check").prop("checked", true);
         $("#modeText").text("Owner Mode");
       } else {
         $("#check").prop("checked", false);
         $("#modeText").text("Renter Mode");
+    
+        // Hide Manage Studios tab for renters
+        const manageTab = document.querySelector(".manage-studios-tab");
+        if (manageTab) {
+          manageTab.style.display = "none";
+        }
       }
     }
   });

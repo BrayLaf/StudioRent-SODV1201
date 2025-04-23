@@ -42,13 +42,13 @@
           <form>
             <input
               type="text"
-              placeholder="Enter a location to start searching"
+              placeholder="Enter a keyword to start searching"
             />
             <button class="btn">Send Now</button>
           </form>
         </div>
         <div class="headerImage">
-          <img src="./images/studio 1/interior1.1.jpg" alt="header" />
+          <img src="./images/interior1.1.jpg" alt="header" />
         </div>
       </div>
     </header>
@@ -112,17 +112,17 @@
       <div class="mostViewedHeader">
         <div class="mostViewedHeaderContent">
           <h2 class="sectionHeader">Browse Studios</h2>
-          <p>
+          <!-- <p>
             Discover the most viewed creative studio rentals! Find the best
             deals with expert insights, market trends, and top-rated spaces.
-          </p>
+          </p> -->
         </div>
         <button class="btn">
           <a href="./html/AvailableStudios.html">View All Studios</a>
         </button>
       </div>
 
-      <div class="studio-filter">
+      <!-- <div class="studio-filter">
         <a href="#" class="active" data-category="recording"
           >Recording Studio</a
         >
@@ -131,7 +131,7 @@
         <a href="#" data-category="podcast">Podcast Studio</a>
       </div>
 
-      <div class="mostViewedGrid" id="mostViewedGrid"></div>
+      <div class="mostViewedGrid" id="mostViewedGrid"></div> -->
     </section>
 
     <div class="sectionContainer testimonialsContainer">
@@ -147,7 +147,7 @@
             environment was inspiring, and the facilities were top-notch."
           </p>
           <hr />
-          <img src="./images/studio 2/interior2.1.jpg" alt="user" />
+          <img src="./images/interior2.1.jpg" alt="user" />
           <p class="name">Rebecca Hargrove</p>
         </div>
         <div class="card">
@@ -158,7 +158,7 @@
             equipped with everything we required."
           </p>
           <hr />
-          <img src="./images/studio 2/interior2.1.jpg" alt="user" />
+          <img src="./images/interior2.1.jpg" alt="user" />
           <p class="name">James Andrews</p>
         </div>
         <div class="card">
@@ -169,7 +169,7 @@
             for any artist or event."
           </p>
           <hr />
-          <img src="./images/studio 2/interior2.1.jpg" alt="user" />
+          <img src="./images/interior2.1.jpg" alt="user" />
           <p class="name">Marissa Lee</p>
         </div>
       </div>
@@ -210,5 +210,21 @@
         <p>Designed with passion by the ArtistSpaces Team.</p>
       </div>
     </footer>
-  </body>
+  
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const searchForm = document.querySelector("form.searchForm");
+  if (searchForm) {
+    searchForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const searchValue = document.querySelector("input[name='search']").value.trim();
+      if (searchValue) {
+        window.location.href = `html/AvailableStudios.html?search=${encodeURIComponent(searchValue)}`;
+      }
+    });
+  }
+});
+</script>
+
+</body>
 </html>

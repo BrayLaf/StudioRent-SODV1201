@@ -603,6 +603,21 @@ padding: 20px;
   background-color: #809baa;
 }
 
+.previewContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.preview-thumb {
+  width: 100px;
+  height: auto;
+  border-radius: 6px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+}
+
 .fileInput {
   position: absolute;
   opacity: 0;

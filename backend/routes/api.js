@@ -5,6 +5,19 @@ const path = require('path');
 
 const router = express.Router();
 
+const multer = require('multer');
+const uploadPath = path.join(__dirname, '../../public/images');
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => cb(null, uploadPath),
+  filename: (req, file, cb) => {
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+    cb(null, uniqueSuffix + '-' + file.originalname);
+  }
+});
+
+const upload = multer({ storage: storage });
+
 // Define file path
 const UserfilePath = path.join(__dirname, '../users.json');
 const StudiofilePath = path.join(__dirname, '../studios.json');
@@ -37,12 +50,21 @@ const writeDataToFile = (data, filePath) => {
 // --- Studio Routes ---
 
 // Create studio
-router.post('/studio', (req, res) => {
+router.post('/studio', upload.array('studioImages', 5), (req, res) => {
   try {
-    const newStudio = { ...req.body, type: 'studio' };
+    const studioData = req.body;
+    const imagePaths = req.files.map(file => `/images/${file.filename}`);
+    
+  if (!studioData.uploadedBy) {
+    return res.status(400).json({ success: false, message: 'Missing uploader information' });
+  }
+
+    const newStudio = { ...studioData, images: imagePaths, type: 'studio', id: Date.now() };
+
     const data = readDataFromFile(StudiofilePath);
     data.push(newStudio);
-    writeDataToFile(data);
+    writeDataToFile(data, StudiofilePath);
+
     res.status(201).json({ success: true, message: 'Studio created', data: newStudio });
   } catch (error) {
     console.error('Error creating studio:', error);
@@ -77,20 +99,31 @@ router.get('/studio/:id', (req, res) => {
 });
 
 // Update studio by ID
-router.put('/studio/:id', (req, res) => {
-  try {
-    const data = readDataFromFile(StudiofilePath);
-    const index = data.findIndex(item => item.type === 'studio' && item.id == req.params.id);
-    if (index !== -1) {
-      data[index] = { ...data[index], ...req.body };
-      writeDataToFile(data, StudiofilePath);
-      res.json({ success: true, message: 'Studio updated', data: data[index] });
-    } else {
-      res.status(404).json({ success: false, message: 'Studio not found' });
-    }
-  } catch (error) {
-    res.status(500).json({ success: false, message: 'Internal server error' });
+router.put("/studio/:id", upload.array("studioImages", 5), (req, res) => {
+  const studioId = parseInt(req.params.id);
+  const updatedStudio = req.body;
+  const data = readDataFromFile(StudiofilePath);
+
+  const index = data.findIndex((studio) => studio.id === studioId);
+  if (index === -1) {
+    return res.status(404).json({ message: "Studio not found" });
   }
+
+  // Preserve old images if none uploaded
+  const newImages = req.files.length
+    ? req.files.map((file) => `/images/${file.filename}`)
+    : data[index].images;
+
+  data[index] = {
+    ...data[index],
+    ...updatedStudio,
+    images: newImages,
+    id: studioId // preserve ID
+  };
+
+  writeDataToFile(data, StudiofilePath);
+
+  res.json({ success: true, message: "Studio updated", data: data[index] });
 });
 
 // --- User Routes ---
@@ -135,7 +168,7 @@ router.post('/login', (req, res) => {
   }
 });
 
-// get user by email
+// get user by email 
 router.get('/user/email/:email', (req, res) => {
   try {
     const data = readDataFromFile(UserfilePath);

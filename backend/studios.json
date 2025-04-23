@@ -1,18 +1,74 @@
-{
-    "studios": [
-        {
-            "ownerId": "1",
-            "id": "1",
-            "type": "",
-            "term": "",
-            "price": "",
-            "accommodation": "",
-            "reachable": "",
-            "parking": "",
-            "studioname": "",
-            "area": "",
-            "address": "",
-            "description": ""
-        }
-    ]
-}
+[
+  {
+    "StudioType": "Recording",
+    "rentalTerm": "Daily",
+    "termPrice": "1200",
+    "accommodation": "25-35",
+    "transportYN": "Yes",
+    "parkingYN": "Yes",
+    "studioName": "Studio test name",
+    "StudioArea": "10000",
+    "studioAddress": "123 sr address",
+    "StudioDesc": "Dark, retro-inspired studio perfect for artistic shoots and audio recording.",
+    "email": "bdlafleur21@gmail.com",
+    "phone": "4039031679",
+    "uploadedBy": "bdlafleur21@gmail.com",
+    "images": [
+      "/images/1745383094284-593997161-archari studio 1.jpg",
+      "/images/1745383094291-15623085-archari studio 2.jpg",
+      "/images/1745383094293-882093486-archari studio 3.jpeg",
+      "/images/1745383094294-325278484-archari studio 4.jpg",
+      "/images/1745383094296-482992862-archari studio 5.jpeg"
+    ],
+    "type": "studio",
+    "id": 1745383094298
+  },
+  {
+    "StudioType": "Podcast",
+    "rentalTerm": "Hourly",
+    "termPrice": "100",
+    "accommodation": "10-20",
+    "transportYN": "Yes",
+    "parkingYN": "No",
+    "studioName": "Podcast place",
+    "StudioArea": "2000",
+    "studioAddress": "345 st placeplace SE",
+    "StudioDesc": "A sleek, soundproof podcast studio with dark grey walls and ambient lighting. Ideal for professional recordings, it offers high-quality mics, acoustic treatment, and a moody, modern vibe perfect for intimate conversations or solo sessions.",
+    "email": "bdlafleur21@gmail.com",
+    "phone": "4039031679",
+    "uploadedBy": "bdlafleur21@gmail.com",
+    "images": [
+      "/images/1745384084964-217336639-interior2.1.jpg",
+      "/images/1745384085007-344964088-interior2.2.jpg",
+      "/images/1745384085035-752845131-interior2.3.jpg",
+      "/images/1745384085044-523074879-interior2.4.jpg",
+      "/images/1745384085048-987137762-exterior2.1.jpg"
+    ],
+    "type": "studio",
+    "id": 1745384085061
+  },
+  {
+    "StudioType": "Photography",
+    "rentalTerm": "Monthly",
+    "termPrice": "300",
+    "accommodation": "35-40",
+    "transportYN": "No",
+    "parkingYN": "Yes",
+    "studioName": "Photograph place",
+    "StudioArea": "400",
+    "studioAddress": "random st place NW",
+    "StudioDesc": "A bright, versatile photography studio with clean backdrops and natural light. Perfect for portraits, product shoots, and creative sessions, with plenty of space and professional lighting equipment.",
+    "email": "bdlafleur21@gmail.com",
+    "phone": "4039031679",
+    "uploadedBy": "bdlafleur21@gmail.com",
+    "images": [
+      "/images/1745384201798-637740673-exterior3.1.jpg",
+      "/images/1745384201836-245647765-interior3.1.jpg",
+      "/images/1745384201865-925128632-interior3.2.jpg",
+      "/images/1745384201880-218990197-interior3.3.jpg",
+      "/images/1745384201885-542685314-interior3.4.jpg"
+    ],
+    "type": "studio",
+    "id": 1745384201895
+  }
+]

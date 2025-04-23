@@ -47,7 +47,7 @@ $(function () {
   setupButtonGroup("transportYN", "transportInput");
   setupButtonGroup("parkingYN", "parkingInput");
 
-  // ✅ Image preview logic (run on file input change)
+  // Image preview logic (run on file input change)
   document.querySelector("#fileUpload").addEventListener("change", function () {
     const previewContainer = document.getElementById("imagePreview");
     previewContainer.innerHTML = "";
@@ -157,7 +157,7 @@ $(function () {
       $("input[name='email']").val(studio.email);
       $("input[name='phone']").val(studio.phone);
   
-      // ✅ Show existing images
+      // Show existing images
       const previewContainer = document.getElementById("imagePreview");
       previewContainer.innerHTML = "";
       (studio.images || []).forEach((src, index) => {

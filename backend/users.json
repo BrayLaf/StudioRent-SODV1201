@@ -1,10 +1,9 @@
-{
-    "users": [
-        {
-          "email": "noel@gmail.com",
-          "name": "noel",
-          "phonenumber": "8257342050",
-          "id": "b40a"
-        }
-      ] 
-}
+[
+  {
+    "name": "Braydon Lafleur",
+    "email": "Bdlafleur21@gmail.com",
+    "number": "4039031679",
+    "ownrent": "owner",
+    "type": "user"
+  }
+]

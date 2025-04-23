@@ -98,18 +98,13 @@
         <form class="accountForm">
           <div class="userDetails">
             <div class="inputInbox">
-              <span class="details">First Name</span>
+              <span class="details">Full Name</span>
               <input class="loggedinName" name="fname" type="text" placeholder="Enter your first name" required />
             </div>
 
             <div class="inputInbox">
-              <span class="details">Last Name</span>
-              <input type="text" placeholder="Enter your last name" required />
-            </div>
-
-            <div class="inputInbox">
               <span class="details">Contact Email</span>
-              <input class="loggedinEmail" name="email" type="text" placeholder="Enter your email" required />
+              <input class="loggedinEmail" name="email" type="text" placeholder="Enter your email" readonly required />
             </div>
 
             <div class="inputInbox">
@@ -117,10 +112,9 @@
               <input class="loggedinPhone" name="number" type="text" placeholder="+1 (***) *** ****" required />
             </div>
           </div>
-
   
           <div class="button">
-            <input type="submit" value="Update Changes" />
+            <input class="profileUpdate" type="submit" value="Save Changes" />
           </div>
         </form>
       </div>

@@ -6,10 +6,12 @@ const path = require('path');
 const router = express.Router();
 
 // Define file path
-const filePath = path.join(__dirname, 'backend', 'database.json');
+const UserfilePath = path.join(__dirname, '../users.json');
+const StudiofilePath = path.join(__dirname, '../studios.json');
+
 
 // Read data
-const readDataFromFile = () => {
+const readDataFromFile = (filePath) => {
   try {
     if (fs.existsSync(filePath)) {
       const data = fs.readFileSync(filePath, 'utf8');
@@ -24,7 +26,7 @@ const readDataFromFile = () => {
 };
 
 // Write data
-const writeDataToFile = (data) => {
+const writeDataToFile = (data, filePath) => {
   try {
     fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
   } catch (error) {
@@ -38,7 +40,7 @@ const writeDataToFile = (data) => {
 router.post('/studio', (req, res) => {
   try {
     const newStudio = { ...req.body, type: 'studio' };
-    const data = readDataFromFile();
+    const data = readDataFromFile(StudiofilePath);
     data.push(newStudio);
     writeDataToFile(data);
     res.status(201).json({ success: true, message: 'Studio created', data: newStudio });
@@ -51,7 +53,7 @@ router.post('/studio', (req, res) => {
 // Get all studios
 router.get('/studios', (req, res) => {
   try {
-    const data = readDataFromFile();
+    const data = readDataFromFile(StudiofilePath);
     const studios = data.filter(item => item.type === 'studio');
     res.json(studios);
   } catch (error) {
@@ -62,7 +64,7 @@ router.get('/studios', (req, res) => {
 // Get studio by ID
 router.get('/studio/:id', (req, res) => {
   try {
-    const data = readDataFromFile();
+    const data = readDataFromFile(StudiofilePath);
     const studio = data.find(item => item.type === 'studio' && item.id == req.params.id);
     if (studio) {
       res.json(studio);
@@ -77,11 +79,11 @@ router.get('/studio/:id', (req, res) => {
 // Update studio by ID
 router.put('/studio/:id', (req, res) => {
   try {
-    const data = readDataFromFile();
+    const data = readDataFromFile(StudiofilePath);
     const index = data.findIndex(item => item.type === 'studio' && item.id == req.params.id);
     if (index !== -1) {
       data[index] = { ...data[index], ...req.body };
-      writeDataToFile(data);
+      writeDataToFile(data, StudiofilePath);
       res.json({ success: true, message: 'Studio updated', data: data[index] });
     } else {
       res.status(404).json({ success: false, message: 'Studio not found' });
@@ -97,44 +99,107 @@ router.put('/studio/:id', (req, res) => {
 router.post('/user', (req, res) => {
   try {
     const newUser = { ...req.body, type: 'user' };
-    const data = readDataFromFile();
+    const data = readDataFromFile(UserfilePath);
+
+    // Check if user already exists by email
+    const existingUser = data.find(user => user.email === newUser.email);
+    if (existingUser) {
+      return res.status(400).json({ success: false, message: 'User already exists' });
+    }
+
     data.push(newUser);
-    writeDataToFile(data);
+    writeDataToFile(data, UserfilePath);
+
     res.status(201).json({ success: true, message: 'User created', data: newUser });
   } catch (error) {
     console.error('Error creating user:', error);
-    res.status(500).json({ success: false, message: 'Internal server error' });
+    res.status(500).json({ success: false, message: 'Internal server error', error });
   }
 });
 
-// Get user by ID
-router.get('/user/:id', (req, res) => {
+// Login by email
+router.post('/login', (req, res) => {
   try {
-    const data = readDataFromFile();
-    const user = data.find(item => item.type === 'user' && item.id == req.params.id);
+    const { email } = req.body;
+    const data = readDataFromFile(UserfilePath);
+
+    const user = data.find(item => item.type === 'user' && item.email === email);
+
     if (user) {
-      res.json(user);
+      res.status(200).json({ success: true, user });
     } else {
-      res.status(404).json({ success: false, message: 'User not found' });
+      res.status(401).json({ success: false, message: 'User not found' });
     }
   } catch (error) {
     res.status(500).json({ success: false, message: 'Internal server error' });
   }
 });
 
-// Update user by ID
-router.put('/user/:id', (req, res) => {
+// get user by email
+router.get('/user/email/:email', (req, res) => {
   try {
-    const data = readDataFromFile();
-    const index = data.findIndex(item => item.type === 'user' && item.id == req.params.id);
-    if (index !== -1) {
-      data[index] = { ...data[index], ...req.body };
-      writeDataToFile(data);
-      res.json({ success: true, message: 'User updated', data: data[index] });
+    const data = readDataFromFile(UserfilePath);
+    const user = data.find(u => u.type === 'user' && u.email === req.params.email);
+    if (user) {
+      res.status(200).json(user);
     } else {
       res.status(404).json({ success: false, message: 'User not found' });
     }
   } catch (error) {
+    console.error('Error getting user:', error);
+    res.status(500).json({ success: false, message: 'Internal server error' });
+  }
+});
+
+
+// update user by email
+router.put('/user/email/:email', (req, res) => {
+  try {
+    const data = readDataFromFile(UserfilePath);
+    const index = data.findIndex(u => u.type === 'user' && u.email === req.params.email);
+
+    if (index === -1) {
+      return res.status(404).json({ success: false, message: 'User not found' });
+    }
+
+    //Validate allowed/disallowed fields
+    const allowedFields = ['name', 'number', 'ownrent'];
+    const disallowedFields = Object.keys(req.body).filter(
+      key => !allowedFields.includes(key)
+    );
+
+    if (disallowedFields.length > 0) {
+      return res.status(400).json({
+        success: false,
+        message: `The following fields cannot be updated: ${disallowedFields.join(', ')}`
+      });
+    }
+
+    //Apply only actual changes
+    const user = data[index];
+    const updates = {};
+    let hasChanges = false;
+
+    allowedFields.forEach(field => {
+      if (req.body[field] !== undefined && req.body[field] !== user[field]) {
+        updates[field] = req.body[field];
+        hasChanges = true;
+      }
+    });
+
+    if (!hasChanges) {
+      return res.status(400).json({
+        success: false,
+        message: 'No changes detected. Update not applied.'
+      });
+    }
+
+    data[index] = { ...user, ...updates };
+    writeDataToFile(data, UserfilePath);
+
+    res.status(200).json({ success: true, message: 'User updated', user: data[index] });
+  } catch (error) {
+    console.error('Error updating user:', error);
     res.status(500).json({ success: false, message: 'Internal server error' });
   }
 });

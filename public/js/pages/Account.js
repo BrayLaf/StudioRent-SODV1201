@@ -7,47 +7,80 @@ document.addEventListener("DOMContentLoaded", () => {
     toggleButton.classList.toggle("rotate");
   });
 
+  // Load current user from backend
+  $(function () {
+    const currentUser = JSON.parse(localStorage.getItem("current user"));
+    if (currentUser && currentUser.email) {
+      fetch(`/api/user/email/${encodeURIComponent(currentUser.email)}`)
+        .then(res => res.ok ? res.json() : Promise.reject("User not found"))
+        .then(user => {
+          updateUserFields(user);
+          localStorage.setItem("current user", JSON.stringify(user));
+        })
+        .catch(err => {
+          console.error("Failed to load user from backend:", err);
+          alert("Unable to load your profile data.");
+        });
+    }
 
-
-  // change user values
-  $(function(){
-    if(localStorage.getItem("current user")){
-        let user = JSON.parse(localStorage.getItem("current user"));
-        console.log(user);
-        updateUserFields(user);
+    function updateUserFields(user) {
+      $(".loggedinName").val(user.name);
+      $(".loggedinEmail").val(user.email);
+      $(".loggedinPhone").val(user.number);
+      if (user.ownrent === "owner") {
+        $("#check").prop("checked", true);
+        $("#modeText").text("Owner Mode");
+      } else {
+        $("#check").prop("checked", false);
+        $("#modeText").text("Renter Mode");
       }
-      function updateUserFields(User){
-        console.log(User.name);
-        $(".loggedinName").val(User.name);
-        $(".loggedinEmail").val(User.email);
-        $(".loggedinPhone").val(User.number);
-      }
-});
-
-  //update user 
-  $(".accountForm").submit(function(e){
-    e.preventDefault();
-    const formData = new FormData(e.target);
-    const data = Object.fromEntries(formData.entries());
-
-    let userToUpdate = JSON.parse(localStorage.getItem("current user"));
-    console.log(userToUpdate);
-    localStorage.removeItem(userToUpdate.email);
-
-    userToUpdate.email = data.email;
-    userToUpdate.name = data.fname;
-    userToUpdate.number = data.number;
-
-    console.log(userToUpdate);
-
-    localStorage.setItem(userToUpdate.email, JSON.stringify(userToUpdate));
-    localStorage.setItem("current user", JSON.stringify(userToUpdate));
+    }
   });
 
+  // Update user via backend
+  $(".accountForm").submit(async function (e) {
+    e.preventDefault();
+  
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData.entries());
+    const currentUser = JSON.parse(localStorage.getItem("current user"));
+  
+    const updatedUser = {
+      name: data.fname,
+      number: data.number,
+      ownrent: data.ownrent
+    };
+  
+    try {
+      const response = await fetch(`/api/user/email/${encodeURIComponent(currentUser.email)}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updatedUser),
+      });
+  
+      const result = await response.json();
+  
+      //Combine status code and response content check
+      if (!response.ok || result.success !== true) {
+        throw new Error(result.message || "Update failed.");
+      }
+  
+      //Only if both backend and HTTP say it succeeded
+      localStorage.setItem("current user", JSON.stringify(result.user));
+      alert("Account updated successfully!");
+      
+    } catch (error) {
+      console.error("Update failed:", error);
+      alert(error.message || "Could not update account.");
+    }
+  });
 });
 
-$(document).ready(function() {
-  $('#check').change(function() {
+// Handle Owner/Renter Mode Toggle
+$(document).ready(function () {
+  $('#check').change(function () {
     if ($(this).prop('checked')) {
       $('#modeText').text('Owner Mode');
     } else {

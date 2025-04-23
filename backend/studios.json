@@ -22,7 +22,7 @@
     ],
     "type": "studio",
     "id": 1745383094298,
-    "status": "Available"
+    "status": "Unavailable"
   },
   {
     "StudioType": "Podcast",
@@ -96,7 +96,8 @@
       "/images/1745437664067-324093345-kobu-agency-8lqd7vpkxzE-unsplash.jpg"
     ],
     "type": "studio",
-    "id": 1745437133478
+    "id": 1745437133478,
+    "status": "Unavailable"
   },
   {
     "StudioType": "Recording",
@@ -120,5 +121,29 @@
     ],
     "type": "studio",
     "id": 1745437357850
+  },
+  {
+    "StudioType": "Recording",
+    "rentalTerm": "Daily",
+    "termPrice": "123",
+    "accommodation": "25-35",
+    "transportYN": "Yes",
+    "parkingYN": "Yes",
+    "studioName": "random",
+    "StudioArea": "100",
+    "studioAddress": "123 sr address",
+    "StudioDesc": "great place",
+    "email": "bdlafleur21@gmail.com",
+    "phone": "4039031679",
+    "uploadedBy": "bdlafleur21@gmail.com",
+    "images": [
+      "/images/1745444302965-784559435-Screenshot 2024-06-17 174615.png",
+      "/images/1745444302991-566700350-Screenshot 2024-07-16 013818.png",
+      "/images/1745444303022-898701042-Screenshot 2024-07-16 014001.png",
+      "/images/1745444303053-299670009-Screenshot 2024-12-25 135908.png",
+      "/images/1745444303071-363984342-Screenshot 2025-02-06 013531.png"
+    ],
+    "type": "studio",
+    "id": 1745444303077
   }
 ]

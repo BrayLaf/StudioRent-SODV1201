@@ -19,5 +19,12 @@
     "number": "7888945985",
     "ownrent": "renter",
     "type": "user"
+  },
+  {
+    "name": "random",
+    "email": "random@gmail.com",
+    "number": "1234567890",
+    "ownrent": "owner",
+    "type": "user"
   }
 ]

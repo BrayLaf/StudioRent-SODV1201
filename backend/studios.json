@@ -47,7 +47,7 @@
     ],
     "type": "studio",
     "id": 1745384085061,
-    "status": "Unavailable"
+    "status": "Available"
   },
   {
     "StudioType": "Photography",
@@ -75,6 +75,57 @@
     "status": "Available"
   },
   {
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+    "StudioType": "Photography",
+    "rentalTerm": "Hourly",
+    "termPrice": "100",
+    "accommodation": "25-35",
+    "transportYN": "Yes",
+    "parkingYN": "No",
+    "studioName": "Creative Haven Studios",
+    "StudioArea": "120 sqm",
+    "studioAddress": "245 - 8th Avenue SW, Calgary, AB T2P 1G6",
+    "StudioDesc": "Creative Haven Studios is a vibrant and spacious 120-square-meter facility designed for artists, photographers, and content creators. Located in the heart of downtown Calgary, the studio offers a versatile, open-plan layout with high ceilings, natural light, and professional-grade equipment. Whether you're hosting a photoshoot, video production, or art workshop, the space is adaptable for various creative projects.\r\n\r\n",
+    "email": "bdlafleur21@gmail.com",
+    "phone": "403903167",
+    "uploadedBy": "bdlafleur21@gmail.com",
+    "images": [
+      "/images/1745437663913-197791205-kobu-agency-uekNxBHpUU8-unsplash.jpg",
+      "/images/1745437663971-125804154-aditya-wardhana-Sp8lbmu1q7w-unsplash.jpg",
+      "/images/1745437663992-501934239-olga-serjantu-m8-mslRGoyM-unsplash.jpg",
+      "/images/1745437664017-829890305-kobu-agency-uKKNmPBsaiI-unsplash.jpg",
+      "/images/1745437664067-324093345-kobu-agency-8lqd7vpkxzE-unsplash.jpg"
+    ],
+    "type": "studio",
+    "id": 1745437664100
+=======
+    "StudioType": "Film",
+    "rentalTerm": "Monthly",
+    "termPrice": "1500",
+    "accommodation": "25-35",
+    "transportYN": "Yes",
+    "parkingYN": "Yes",
+    "studioName": "La La Land Studio",
+    "StudioArea": "1500",
+    "studioAddress": "6 Anaheim Court",
+    "StudioDesc": "The Best studio to record your happy moments. ",
+    "email": "sonirajbir02@gmail.com",
+    "phone": "4038897584",
+    "uploadedBy": "sonirajbir02@gmail.com",
+    "images": [
+      "/images/1745437133458-147310520-archari studio 5.jpeg",
+      "/images/1745437133458-482787495-archari studio 4.jpg",
+      "/images/1745437133467-390957025-archari studio 3.jpeg",
+      "/images/1745437133467-874109477-archari studio 2.jpg",
+      "/images/1745437133472-408926347-archari studio 1.jpg"
+    ],
+    "type": "studio",
+    "id": 1745437133478
+  },
+  {
+>>>>>>> Stashed changes
     "StudioType": "Recording",
     "rentalTerm": "Hourly",
     "termPrice": "100",
@@ -96,5 +147,9 @@
     ],
     "type": "studio",
     "id": 1745437357850
+<<<<<<< Updated upstream
+=======
+>>>>>>> b218ca6935ed65e3234d4cedeb0e99d2026dfd0f
+>>>>>>> Stashed changes
   }
 ]

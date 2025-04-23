@@ -1,24 +1,6 @@
 [
   {
-    "email": "alex.owner@example.com",
-    "name": "Alex Owner",
-    "number": "587-123-4567",
-    "type": "Owner"
-  },
-  {
-    "email": "sarah.renter@example.com",
-    "name": "Sarah Renter",
-    "number": "403-555-0192",
-    "type": "Renter"
-  },
-  {
-    "email": "jordan.creator@example.com",
-    "name": "Jordan Creator",
-    "number": "780-678-2345",
-    "type": "Owner"
-  },
-  {
-    "name": "Braydon Lafleur",
+    "name": "Braydon",
     "email": "bdlafleur21@gmail.com",
     "number": "4039031679",
     "ownrent": "owner",
@@ -30,6 +12,7 @@
     "number": "4038897584",
     "ownrent": "owner",
     "type": "user"
+<<<<<<< Updated upstream
   },
   {
     "name": "Rajbir ",
@@ -37,5 +20,7 @@
     "number": "7888945985",
     "ownrent": "renter",
     "type": "user"
+=======
+>>>>>>> Stashed changes
   }
 ]

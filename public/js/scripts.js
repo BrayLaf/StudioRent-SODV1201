@@ -1,40 +1,4 @@
 $(function () {
-
-      //sample studio data - to be filled in future
-        const studioData = {
-          recording: [
-            { img: "./images/studio 2/interior2.1.jpg" },
-            { img: "./images/studio 3/interior3.2.jpg" },
-            { img: "./images/studio 2/interior2.2.jpg" },
-            { img: "./images/studio 1/interior1.4.jpg" },
-            { img: "./images/studio 1/interior1.2.jpg" },
-            { img: "./images/studio 3/interior3.4.jpg" },
-          ],
-          photography: [
-            { img: "./images/studio 3/exterior3.4.jpg" },
-            { img: "./images/studio 2/exterior1.2.jpg" },
-            { img: "./images/studio 2/interior2.3.jpg" },
-            { img: "./images/studio 3/exterior4.1.jpg" },
-            { img: "./images/studio 3/interior3.1.jpg" },
-            { img: "./images/studio 2/interior2.1.jpg" },
-          ],
-          film: [
-            { img: "./images/studio 2/interior2.1.jpg" },
-            { img: "./images/studio 3/interior1.2.jpg" },
-            { img: "./images/studio 2/interior3.2.jpg" },
-            { img: "./images/studio 1/interior1.4.jpg" },
-            { img: "./images/studio 1/interior2.2.jpg" },
-            { img: "./images/studio 3/interior3.4.jpg" },
-          ],
-          podcast: [
-            { img: "./images/studio 2/interior2.3.jpg" },
-            { img: "./images/studio 3/interior3.4.jpg" },
-            { img: "./images/studio 2/interior2.5.jpg" },
-            { img: "./images/studio 1/interior1.3.jpg" },
-            { img: "./images/studio 1/interior1.2.jpg" },
-            { img: "./images/studio 3/interior3.1.jpg" },
-          ],
-        };
         
         function updateStudios(category) {
           let grid = $("#mostViewedGrid");

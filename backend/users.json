@@ -30,5 +30,12 @@
     "number": "4038897584",
     "ownrent": "owner",
     "type": "user"
+  },
+  {
+    "name": "Rajbir ",
+    "email": "rajbirsoni101@gmail.com",
+    "number": "7888945985",
+    "ownrent": "renter",
+    "type": "user"
   }
 ]

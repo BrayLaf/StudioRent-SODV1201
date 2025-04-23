@@ -75,30 +75,6 @@
     "status": "Available"
   },
   {
-    "StudioType": "Film",
-    "rentalTerm": "Monthly",
-    "termPrice": "1500",
-    "accommodation": "25-35",
-    "transportYN": "Yes",
-    "parkingYN": "Yes",
-    "studioName": "La La Land Studio",
-    "StudioArea": "1500",
-    "studioAddress": "6 Anaheim Court",
-    "StudioDesc": "The Best studio to record your happy moments. ",
-    "email": "sonirajbir02@gmail.com",
-    "phone": "4038897584",
-    "uploadedBy": "sonirajbir02@gmail.com",
-    "images": [
-      "/images/1745437133458-147310520-archari studio 5.jpeg",
-      "/images/1745437133458-482787495-archari studio 4.jpg",
-      "/images/1745437133467-390957025-archari studio 3.jpeg",
-      "/images/1745437133467-874109477-archari studio 2.jpg",
-      "/images/1745437133472-408926347-archari studio 1.jpg"
-    ],
-    "type": "studio",
-    "id": 1745437133478
-  },
-  {
     "StudioType": "Recording",
     "rentalTerm": "Hourly",
     "termPrice": "100",

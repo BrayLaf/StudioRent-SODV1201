@@ -36,9 +36,9 @@ document.addEventListener("DOMContentLoaded", async () => {
                 studio.StudioDesc?.toLowerCase().includes(searchTerm)
             );
 
-            const matchesType = type === "all" || type === "studioType" || studio.StudioType?.toLowerCase() === type.toLowerCase();
-            const matchesTerm = term === "all" || term === "rentalTerm" || studio.rentalTerm?.toLowerCase() === term.toLowerCase();
-
+            const matchesType = !type || type === "all" || studio.StudioType?.toLowerCase() === type.toLowerCase();
+            const matchesTerm = !term || term === "all" || studio.rentalTerm?.toLowerCase() === term.toLowerCase();
+            
             const matchesPeople = (() => {
                 const count = parseInt(studio.accommodation);
                 if (people === "all" || people === "peopleAllowed") return true;

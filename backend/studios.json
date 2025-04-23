@@ -73,5 +73,52 @@
     "type": "studio",
     "id": 1745384201895,
     "status": "Available"
+  },
+  {
+    "StudioType": "Film",
+    "rentalTerm": "Monthly",
+    "termPrice": "1500",
+    "accommodation": "25-35",
+    "transportYN": "Yes",
+    "parkingYN": "Yes",
+    "studioName": "La La Land Studio",
+    "StudioArea": "1500",
+    "studioAddress": "6 Anaheim Court",
+    "StudioDesc": "The Best studio to record your happy moments. ",
+    "email": "sonirajbir02@gmail.com",
+    "phone": "4038897584",
+    "uploadedBy": "sonirajbir02@gmail.com",
+    "images": [
+      "/images/1745437133458-147310520-archari studio 5.jpeg",
+      "/images/1745437133458-482787495-archari studio 4.jpg",
+      "/images/1745437133467-390957025-archari studio 3.jpeg",
+      "/images/1745437133467-874109477-archari studio 2.jpg",
+      "/images/1745437133472-408926347-archari studio 1.jpg"
+    ],
+    "type": "studio",
+    "id": 1745437133478
+  },
+  {
+    "StudioType": "Recording",
+    "rentalTerm": "Hourly",
+    "termPrice": "100",
+    "accommodation": "35-40",
+    "transportYN": "No",
+    "parkingYN": "Yes",
+    "studioName": "Luxury Studio ",
+    "StudioArea": "1000",
+    "studioAddress": "37 Ave, China Town, Calgary",
+    "StudioDesc": "Has a lot of traditional equipment used in edo period for video capture. Will give you knowledge about our history",
+    "email": "rajbirsoni101@gmail.com",
+    "phone": "14038897584",
+    "uploadedBy": "sonirajbir02@gmail.com",
+    "images": [
+      "/images/1745437357817-92449035-white castle 5.webp",
+      "/images/1745437357829-95387198-white castle 4 - Copy.webp",
+      "/images/1745437357835-964270469-white castle 4.webp",
+      "/images/1745437357836-59711800-white castle 3.webp"
+    ],
+    "type": "studio",
+    "id": 1745437357850
   }
 ]

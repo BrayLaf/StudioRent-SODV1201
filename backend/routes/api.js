@@ -237,4 +237,31 @@ router.put('/user/email/:email', (req, res) => {
   }
 });
 
+//delete studio
+router.delete("/studio/:id", (req, res) => {
+  const id = parseInt(req.params.id);
+  let data = readDataFromFile(StudiofilePath);
+  const initialLength = data.length;
+  data = data.filter(s => s.id !== id);
+
+  if (data.length === initialLength) {
+    return res.status(404).json({ message: "Studio not found" });
+  }
+
+  writeDataToFile(data, StudiofilePath);
+  res.json({ message: "Studio deleted successfully" });
+});
+
+//update studio availability
+router.patch("/studio/:id/toggle-status", (req, res) => {
+  const id = parseInt(req.params.id);
+  const data = readDataFromFile(StudiofilePath);
+  const studio = data.find(s => s.id === id);
+  if (!studio) return res.status(404).json({ message: "Studio not found" });
+
+  studio.status = studio.status === "Unavailable" ? "Available" : "Unavailable";
+  writeDataToFile(data, StudiofilePath);
+  res.json({ message: `Studio marked as ${studio.status}`, data: studio });
+});
+
 module.exports = router;

@@ -21,7 +21,8 @@
       "/images/1745383094296-482992862-archari studio 5.jpeg"
     ],
     "type": "studio",
-    "id": 1745383094298
+    "id": 1745383094298,
+    "status": "Available"
   },
   {
     "StudioType": "Podcast",
@@ -45,7 +46,8 @@
       "/images/1745384085048-987137762-exterior2.1.jpg"
     ],
     "type": "studio",
-    "id": 1745384085061
+    "id": 1745384085061,
+    "status": "Unavailable"
   },
   {
     "StudioType": "Photography",
@@ -69,6 +71,7 @@
       "/images/1745384201885-542685314-interior3.4.jpg"
     ],
     "type": "studio",
-    "id": 1745384201895
+    "id": 1745384201895,
+    "status": "Available"
   }
 ]

@@ -52,10 +52,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const data = Object.fromEntries(formData.entries());
     const currentUser = JSON.parse(localStorage.getItem("current user"));
   
+    // Determine role from checkbox state
+    const role = $("#check").is(":checked") ? "owner" : "renter";
+  
     const updatedUser = {
       name: data.fname,
       number: data.number,
-      ownrent: data.ownrent
+      ownrent: role
     };
   
     try {
@@ -69,20 +72,19 @@ document.addEventListener("DOMContentLoaded", () => {
   
       const result = await response.json();
   
-      //Combine status code and response content check
       if (!response.ok || result.success !== true) {
         throw new Error(result.message || "Update failed.");
       }
   
-      //Only if both backend and HTTP say it succeeded
       localStorage.setItem("current user", JSON.stringify(result.user));
       alert("Account updated successfully!");
-      
+  
     } catch (error) {
       console.error("Update failed:", error);
       alert(error.message || "Could not update account.");
     }
   });
+  
 });
 
 // Handle Owner/Renter Mode Toggle

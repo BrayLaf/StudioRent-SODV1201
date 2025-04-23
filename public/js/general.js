@@ -1,5 +1,11 @@
 $(function () {
-  let user;
+  let user = null;
+
+  //Load user from localStorage on every page load
+  const storedUser = localStorage.getItem("current user");
+  if (storedUser) {
+    user = JSON.parse(storedUser);
+  }
   // if there is a user hide login and show logout
   function updateLoginButton() {
     if (user) {
@@ -8,6 +14,7 @@ $(function () {
       $(".loginButton").text("Login").removeClass("logout").show();
     }
   }
+  
   updateLoginButton();
 
   $(".loginButton").click(function () {
